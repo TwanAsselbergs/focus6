@@ -35,8 +35,7 @@
             src="/logo.jpeg"
             alt="Logo"
             class="{$scrolled
-              ? // w-36, w-48
-                'w-32 md:w-36'
+              ? 'w-32 md:w-36'
               : 'w-36 md:w-48'} h-auto md:ml-12 transition-all duration-500"
           /></a
         >
