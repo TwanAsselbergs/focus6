@@ -16,9 +16,15 @@
 
 <Header />
 
-<main class="pt-28 h-screen bg-blue-500">
-  <h1 class="text-3xl font-bold">Home</h1>
-  <section>
+<main class="pt-28">
+  <section class="mb-16">
+    <img
+      src="/header.jpeg"
+      alt="Header"
+      class="w-10/12 h-auto flex justify-center items-center mx-auto rounded-3xl"
+    />
+  </section>
+  <section class="w-full h-screen bg-gray-100">
     <h2 class="text-xl">Posts</h2>
     {#if posts.length > 0}
       {#each posts as post}
