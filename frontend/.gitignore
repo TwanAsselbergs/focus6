@@ -29,4 +29,4 @@ $RECYCLE.BIN/
 dist/
 build/
 
-node_modules/
+node-modules/
