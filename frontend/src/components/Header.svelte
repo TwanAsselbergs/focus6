@@ -27,7 +27,11 @@
     ? 'h-16'
     : 'h-24'} "
 >
-  <nav class="bg-white transition-all duration-500 p-4">
+  <nav
+    class="bg-white transition-all duration-500 p-4 {$scrolled
+      ? 'shadow-sm'
+      : 'shadow-none'}"
+  >
     <div class="flex justify-between items-center">
       <div>
         <a href="/"
@@ -41,7 +45,7 @@
         >
       </div>
       <div class="pr-12 hidden md:block">
-        <ul class="flex font-bold text-lg items-center">
+        <ul class="flex font-semibold text-lg items-center">
           <li class="pr-1">
             <a
               href="/"
