@@ -1,12 +1,12 @@
-<footer class="bg-white p-12 md:mt-16">
+<footer class="md:px-16">
   <div
-    class="container mx-auto flex flex-col md:flex-row justify-between items-center"
+    class="mx-auto flex flex-col md:flex-row justify-between items-center bg-red-600 p-12 md:p-24 md:mt-16 rounded-t-3xl"
   >
     <a href="/" class="flex items-center mb-4 md:mb-0">
-      <img src="/logo.jpeg" alt="Logo" class="w-24 h-auto" />
+      <img src="/logo.png" alt="Logo" class="w-24 h-auto" />
     </a>
     <div class="flex flex-col justify-center items-center">
-      <div class="flex space-x-4 mt-4 md:mt-0 pb-6">
+      <div class="flex space-x-4 mt-4 md:mt-0 pb-8 md:pb-12">
         <a
           href="mailto:info@focus6.nl"
           aria-label="Email"
@@ -22,7 +22,10 @@
               d="M23.998 7.48c.335.306.35.819.036 1.145l-5.898 6.103 5.88 5.728c.298.29.323.745.075 1.062l-.075.083a.847.847 0 01-1.176 0l-5.844-5.693-1.832 1.896a.847.847 0 01-1.21 0l-1.833-1.896L6.277 21.6a.847.847 0 01-1.176 0 .795.795 0 010-1.145l5.88-5.728-5.897-6.103a.795.795 0 01.035-1.145.847.847 0 011.176.035l8.264 8.552 8.264-8.552a.847.847 0 011.175-.035z"
             ></path>
           </svg>
-          <span class="text-gray-600 text-sm md:text-base">info@focus6.nl</span>
+          <span
+            class="text-gray-200 text-sm md:text-lg font-semibold hover:underline"
+            >info@focus6.nl</span
+          >
         </a>
         <a
           href="tel:+0621937222"
@@ -39,32 +42,23 @@
               d="M6.364 3.81c1.496-1.503 5.032-2.139 6.907-2.108 1.88-.218 1.273 8.104.313 8.263 0 0-3.039.384-3.125 1.275-.116 1.217 3.009 8.67 4.22 8.84.65.091 2.606-1.402 2.606-1.402 1.521-1.145 4.678 2.2 6.161 3.596.649.627.617 1.159-.059 1.947-1.181 1.322-4.29 3.439-5.52 3.266-2.988-.42-8.05-4.592-10.483-9.582-2.743-5.629-2.712-12.82-1.02-14.095z"
             ></path>
           </svg>
-          <span class="text-gray-600 text-sm md:text-base">06-21937222</span>
+          <span
+            class="text-gray-200 text-sm md:text-lg font-semibold hover:underline"
+            >06-21937222</span
+          >
         </a>
       </div>
       <nav
-        class="flex flex-col md:flex-row text-center md:text-base space-y-4 md:space-y-0 md:space-x-6 text-gray-600"
+        class="flex flex-col md:flex-row text-center md:text-base space-y-4 md:space-y-0 md:space-x-6 text-gray-200 font-semibold"
       >
-        <a href="/" class="hover:text-gray-900 transition-colors underline"
-          >Home</a
-        >
-        <a
-          href="/concept"
-          class="hover:text-gray-900 transition-colors hover:underline"
-          >Spiegelconcept</a
-        >
-        <a
-          href="/services"
-          class="hover:text-gray-900 transition-colors hover:underline"
-          >Dienstverlening</a
-        >
-        <a
-          href="/contact"
-          class="hover:text-gray-900 transition-colors hover:underline"
-          >Contact</a
-        >
+        <a href="/" class="underline">Home</a>
+        <a href="/concept" class="hover:underline">Spiegelconcept</a>
+        <a href="/services" class="hover:underline">Dienstverlening</a>
+        <a href="/contact" class="hover:underline pb-16 md:pb-0">Contact</a>
       </nav>
     </div>
-    <p class="text-gray-500 mt-4 md:mt-0">&copy; 2024 Focus6</p>
+    <p class="text-gray-200 font-semibold text-sm md:text-base">
+      &copy; 2024 Focus6
+    </p>
   </div>
 </footer>
