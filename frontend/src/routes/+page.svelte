@@ -18,11 +18,11 @@
 
 <main class="pt-[88px] md:pt-28">
   <section class="mb-16 relative">
-    <div class="relative w-full mx-auto rounded-3xl">
+    <div class="relative w-full mx-auto">
       <img
         src="/header.jpeg"
         alt="Header"
-        class="w-full h-screen md:h-auto object-cover rounded-b-3xl md:rounded-r-full"
+        class="w-full h-[40rem] md:h-auto object-cover rounded-b-3xl md:rounded-r-full"
       />
       <div
         class="absolute inset-0 rounded-3xl text-white pl-4 pt-16 md:pt-48 md:pl-48"
@@ -47,7 +47,7 @@
           </p>
           <a
             href="/concept"
-            class="bg-[#185CE6] hover:bg-[#2B67E8] transition-all duration-500 py-3 md:py-4 px-6 rounded-md font-medium mt-4 md:mt-12 text-sm md:text-lg"
+            class="bg-[#185CE6] hover:bg-[#2B67E8] transition-all duration-500 py-4 px-6 md:py-4 md:px-6 rounded-lg font-semibold text-lg md:text-lg"
             >Spiegelconcept</a
           >
         </div>
@@ -55,13 +55,17 @@
     </div>
   </section>
 
-  <hr class="w-1/4 flex justify-center items-center mx-auto pb-24" />
+  <hr class="w-1/4 flex justify-center items-center mx-auto pb-12 md:pb-28" />
 
   <section>
     <div class="flex flex-col md:flex-row justify-center items-center">
-      <div class="md:w-1/2">
-        <h2 class="text-xl md:text-3xl font-bold pb-6">Wat bieden wij?</h2>
-        <p class="pr-48 text-sm md:text-lg">
+      <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
+        <h2
+          class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
+        >
+          Wat bieden wij?
+        </h2>
+        <p class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg">
           <span class="font-semibold text-lg md:text-2xl"
             >Focu<span class="text-[#F00F22]">s</span><span
               class="text-[#185CE6]">6</span
@@ -80,17 +84,27 @@
           >
         </p>
       </div>
-      <img src="/img-1.jpg" alt="Img" class="rounded-2xl shadow-2xl" />
+      <img
+        src="/img-1.jpg"
+        alt="Img"
+        class="rounded-3xl shadow-xl w-4/5 md:w-1/4 mt-4 md:mt-0"
+      />
     </div>
-    <div class="flex flex-col md:flex-row items-center md:justify-center my-48">
+    <div
+      class="flex flex-col md:flex-row items-center md:justify-center my-24 md:my-48"
+    >
       <div
-        class="bg-[#185CE6] w-1/3 h-72 rounded-2xl mr-12 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-[101%]"
+        class="bg-[#185CE6] w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-[101%]"
       >
         <h2 class="p-4 text-white font-semibold text-2xl">Spiegelconcept</h2>
       </div>
-      <div class="w-1/3 ml-36">
-        <h2 class="text-3xl font-bold pb-6">Wat houdt het in?</h2>
-        <p class="text-lg">
+      <div class="text-center md:w-1/3 md:ml-36">
+        <h2 class="text-2xl md:text-3xl font-bold pb-6 pt-12 md:pt-0">
+          Wat houdt het in?
+        </h2>
+        <p
+          class="w-10/12 flex justify center items-center mx-auto flex-col text-lg"
+        >
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam
           accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus
           odit iure ab atque adipisci molestiae reiciendis similique asperiores
@@ -102,8 +116,12 @@
         </p>
       </div>
     </div>
-    <div class="w-full h-96 bg-gray-100 flex justify-center items-center">
-      <h2 class="text-2xl font-bold">Recensies</h2>
+    <div class="px-4 md:px-44 mb-24 md:mb-48">
+      <div
+        class="w-full h-48 md:h-96 bg-gray-100 flex justify-center items-center rounded-3xl"
+      >
+        <h2 class="text-lg md:text-4xl font-bold">Recensies</h2>
+      </div>
     </div>
   </section>
   <!-- <section class="w-full h-screen bg-gray-100">
