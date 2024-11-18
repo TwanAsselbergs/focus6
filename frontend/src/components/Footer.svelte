@@ -1,4 +1,4 @@
-<footer class="bg-white p-12 mt-16">
+<footer class="bg-white p-12 md:mt-16">
   <div
     class="container mx-auto flex flex-col md:flex-row justify-between items-center"
   >

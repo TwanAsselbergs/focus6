@@ -16,25 +16,29 @@
 
 <Header />
 
-<main class="pt-28">
+<main class="pt-[88px] md:pt-28">
   <section class="mb-16 relative">
     <div class="relative w-full mx-auto rounded-3xl">
       <img
         src="/header.jpeg"
         alt="Header"
-        class="w-full h-auto rounded-r-full"
+        class="w-full h-screen md:h-auto object-cover rounded-b-3xl md:rounded-r-full"
       />
-      <div class="absolute inset-0 rounded-3xl text-white md:pl-48 md:pt-48">
-        <div class="w-full md:w-2/3">
+      <div
+        class="absolute inset-0 rounded-3xl text-white pl-4 pt-16 md:pt-48 md:pl-48"
+      >
+        <div
+          class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
+        >
           <h2
-            class="text-4xl md:text-7xl font-semibold pb-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)]"
+            class="text-4xl md:text-7xl font-semibold pb-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)] text-center md:text-left"
           >
             Welkom bij Focu<span class="text-[#F00F22]">s</span><span
               class="text-[#185CE6]">6</span
             >!
           </h2>
           <p
-            class="w-full md:w-3/4 text-sm md:text-base pt-4 pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)]"
+            class="w-11/12 md:w-3/4 text-center md:text-left text-md md:text-base pt-4 pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)]"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
             consequatur esse doloribus autem eos nisi voluptatum ipsa. Expedita

@@ -134,7 +134,7 @@
       </button>
     </div>
 
-    <ul class="flex flex-col items-center pt-24 font-bold text-lg">
+    <ul class="flex flex-col items-center pt-24 font-bold text-lg space-y-3">
       <li class="py-3">
         <a
           href="/"
