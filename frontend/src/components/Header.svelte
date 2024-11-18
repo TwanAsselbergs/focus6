@@ -115,7 +115,7 @@
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div
-      class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-50 z-30 transition-opacity duration-500 ease-in-out"
+      class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-40 z-30 transition-opacity duration-500 ease-in-out"
       on:click={handleBackDropClick}
     ></div>
   {/if}
