@@ -6,7 +6,9 @@
 <Header />
 
 <main class="pt-28 h-screen bg-yellow-600">
-  <h1 class="text-3xl font-bold">Spiegelconcept</h1>
+  <h1 class="text-3xl font-bold">Het Spiegelconcept</h1>
+  <div class="flex-container"></div>
+
 </main>
 
 <Footer />
