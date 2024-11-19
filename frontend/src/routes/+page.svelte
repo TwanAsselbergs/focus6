@@ -107,7 +107,7 @@
           accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus
           odit iure ab atque adipisci molestiae reiciendis similique asperiores
           voluptate labore. <span
-            ><a href="/concept" class="hover:underline text-blue-400"
+            ><a href="/concept" class="hover:underline text-blue-500"
               >Lees meer...</a
             ></span
           >
