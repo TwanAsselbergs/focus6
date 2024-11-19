@@ -1,9 +1,9 @@
 <footer>
   <div
-    class="mx-auto flex flex-col md:flex-row justify-between items-center bg-[#202528] p-12 md:p-36 md:mt-16 rounded-t-3xl"
+    class="mx-auto flex flex-col md:flex-row justify-between items-center bg-[#202528] p-12 md:p-36 md:mt-16 rounded-t-3xl text-center md:text-left"
   >
     <div
-      class="flex flex-col md:flex-row justify-between w-full space-y-8 md:space-y-0 md:space-x-48 mr-24"
+      class="flex flex-col md:flex-row justify-between w-full space-y-8 md:space-y-0 md:space-x-48 md:mr-24"
     >
       <div>
         <h3 class="text-white text-lg md:text-xl font-bold mb-4">
@@ -11,13 +11,13 @@
             class="text-[#185CE6]">6</span
           >
         </h3>
-        <p class="text-gray-400 text-sm md:text-base leading-relaxed w-5/6">
+        <p class="text-gray-400 text-sm md:text-base leading-relaxed">
           Bij Focus6 streven we ernaar om innovatieve oplossingen te bieden
           waarmee bedrijven hun doelen kunnen bereiken. Onze focus ligt op
           kwaliteit en klantgerichtheid.
         </p>
         <a
-          href="/about"
+          href="/services"
           class="text-blue-500 font-semibold hover:underline mt-4 block"
         >
           Meer lezen over ons →
@@ -32,7 +32,7 @@
           <a
             href="mailto:info@focus6.nl"
             aria-label="Email"
-            class="flex items-center space-x-2"
+            class="flex items-center justify-center md:justify-start space-x-2"
           >
             <svg viewBox="0 0 29 29" style="width:20px" class="text-gray-600">
               <path
@@ -52,7 +52,7 @@
           <a
             href="tel:+0621937222"
             aria-label="Phone"
-            class="flex items-center space-x-2"
+            class="flex items-center justify-center md:jusify-start space-x-2"
           >
             <svg viewBox="0 0 29 29" style="width:20px" class="text-gray-600">
               <path
@@ -83,10 +83,10 @@
     </div>
   </div>
   <div
-    class="flex justify-center items-center mx-auto bg-[#1C2122] p-10 gap-36"
+    class="flex justify-center items-center mx-auto bg-[#1C2122] p-10 md:gap-36"
   >
     <a href="/">
-      <img src="/logo.png" alt="Logo" class="w-24 h-auto" />
+      <img src="/logo.png" alt="Logo" class="w-24 h-auto hidden md:block" />
     </a>
     <p class="text-gray-600 text-xs">
       &copy; Copyright 2024. Alle rechten voorbehouden.
