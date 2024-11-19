@@ -34,7 +34,11 @@
             aria-label="Email"
             class="flex items-center justify-center md:justify-start space-x-2"
           >
-            <svg viewBox="0 0 29 29" style="width:20px" class="text-gray-600">
+            <svg
+              viewBox="0 0 29 29"
+              style="width:20px"
+              class="text-gray-600 md:ml-2"
+            >
               <path
                 fill="currentColor"
                 d="M5.135 5.37c-1.531 0-2.772 1.209-2.772 2.7v12.958c0 1.491 1.241 2.7 2.772 2.7h18.848c1.53 0 2.771-1.209 2.771-2.7V8.07c0-1.491-1.24-2.7-2.771-2.7H5.135zm0-1.62h18.848c2.449 0 4.434 1.934 4.434 4.32v12.958c0 2.386-1.985 4.32-4.434 4.32H5.135c-2.45 0-4.435-1.934-4.435-4.32V8.07c0-2.386 1.986-4.32 4.435-4.32z"
