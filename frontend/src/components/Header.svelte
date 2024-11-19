@@ -28,7 +28,7 @@
     : 'h-24'} "
 >
   <nav
-    class="bg-white transition-all duration-500 p-4 {$scrolled
+    class="bg-white transition-all duration-500 p-4 rounded-b-3xl {$scrolled
       ? 'shadow-sm'
       : 'shadow-none'}"
   >
