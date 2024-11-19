@@ -98,13 +98,11 @@
       >
         <h2 class="p-4 text-white font-semibold text-2xl">Spiegelconcept</h2>
       </div>
-      <div class="text-center md:w-1/3 md:ml-36">
+      <div class="text-center md:text-left md:w-1/3 md:ml-36">
         <h2 class="text-2xl md:text-3xl font-bold pb-6 pt-12 md:pt-0">
           Wat houdt het in?
         </h2>
-        <p
-          class="w-10/12 flex justify center items-center mx-auto flex-col text-lg"
-        >
+        <p class="w-11/12 md:w-full mx-auto text-lg">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam
           accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus
           odit iure ab atque adipisci molestiae reiciendis similique asperiores
