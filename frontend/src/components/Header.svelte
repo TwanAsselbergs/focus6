@@ -28,8 +28,8 @@
     : 'h-24'} "
 >
   <nav
-    class="bg-white transition-all duration-500 p-4 rounded-b-3xl {$scrolled
-      ? 'shadow-sm'
+    class="bg-white transition-all duration-500 p-4 {$scrolled
+      ? 'shadow-sm rounded-b-xl'
       : 'shadow-none'}"
   >
     <div class="flex justify-between items-center">
@@ -139,7 +139,7 @@
         <a
           href="/"
           class="{$currentPath === '/'
-            ? 'bg-gray-100'
+            ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Home</a
         >
@@ -148,7 +148,7 @@
         <a
           href="/concept"
           class="{$currentPath === '/concept'
-            ? 'bg-gray-100'
+            ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Spiegelconcept</a
         >
@@ -157,7 +157,7 @@
         <a
           href="/services"
           class="{$currentPath === '/services'
-            ? 'bg-gray-100'
+            ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Dienstverlening</a
         >
@@ -166,7 +166,7 @@
         <a
           href="/contact"
           class="{$currentPath === '/contact'
-            ? 'bg-gray-100'
+            ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Contact</a
         >
