@@ -25,7 +25,7 @@
       </div>
 
       <div>
-        <h3 class="text-white text-lg md:text-xl font-bold mb-4">
+        <h3 class="text-white text-lg md:text-xl font-bold mb-4 md:ml-1.5">
           Contact Ons
         </h3>
         <div class="flex flex-col space-y-4">
@@ -56,7 +56,7 @@
           <a
             href="tel:+0621937222"
             aria-label="Phone"
-            class="flex items-center justify-center md:jusify-start space-x-2"
+            class="flex items-center justify-center space-x-2"
           >
             <svg viewBox="0 0 29 29" style="width:20px" class="text-gray-600">
               <path
