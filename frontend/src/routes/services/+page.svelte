@@ -1,39 +1,54 @@
 <script>
   import Header from "../../components/Header.svelte";
   import Footer from "../../components/Footer.svelte";
+  import clsx from "clsx";
+  import { ScrollObserver } from "@/components/ScrollObserver";
 
-  // Array sdienstverlening dummy
-  const services = [
-    { name: "Teamkompas.", description: "Expert advice to optimize your team's strategy and performance." },
-    { name: "Zelfevaluatie.", description: "Tailored plans to align your team's goals with organizational success." },
-    { name: "Prestatiesturing.", description: "In-depth analysis of team dynamics and performance." },
-    { name: "Teamplan en -evaluatie.", description: "Streamline your processes for better efficiency and results." },
-    { name: "Omgevingsanalyse -en aanpak.", description: "Develop effective strategies to engage key stakeholders." },
-    { name: "Stakeholdersanalyse en -strategie.", description: "Tools and methods to track and enhance team performance." },
-    { name: "Processen.", description: "We bepalen de kritische processen en onderkende risico's dekken we af met maatregelen." },
-    { name: "Projectmanagement.", description: "Wij ondersteunen uw projecten met de juiste manieren en technieken." },
-    { name: "Projectmanagement.", description: "Wij ondersteunen uw projecten met de juiste manieren en technieken." }
-  
-
+  const items = [
+    {
+      title: "Loudness correction",
+      content: "Ensure that your audio maintains consistent relative loudness across one or many recordings.",
+    },
+    {
+      title: "Speech isolation",
+      content: "Isolate and boost voices, using neural networks trained to distinguish speech from external noise.",
+    },
+    {
+      title: "Noise reduction",
+      content:
+        "Eliminate all air conditioners, lawn mowers, noisy neighbors, and other background noises from your recording.",
+    },
   ];
 </script>
 
 <Header />
 
-<main class="pt-28 bg-gray-100 min-h-screen">
-  <h1 class="text-4xl font-extrabold text-center mb-10">Dienstverlening</h1>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-6">
-    {#each services as { name, description }}
-      <div
-        class="relative bg-white shadow-lg rounded-lg p-6 overflow-hidden transition-transform transform hover:scale-105 hover:shadow-2xl"
-      >
-        <div class="absolute inset-0 bg-gradient-to-br from-red-400 to-blue-400 opacity-0 hover:opacity-50 transition-opacity"></div>
-        <h2 class="text-xl font-bold mb-2">{name}</h2>
-        <p class="text-gray-600">{description}</p>
-      </div>
-    {/each}
+<div class="min-h-screen w-screen px-8 py-12 md:px-0">
+  <div class="pb-24 text-center text-sm text-white/30">Scroll down</div>
+
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <ScrollObserver class="relative grid grid-cols-2 gap-32">
+      <ScrollObserver.TriggerGroup class="py-[50vh]">
+        {#each items as item, index}
+          <ScrollObserver.Trigger id={`features-${index}`} class="relative scroll-mt-[50vh]">
+            {#if isActive}
+              <div class="text-white relative -mx-8 -mb-4 rounded-2xl p-8 transition duration-300 hover:bg-white/10">
+                <div class="font-epilogue text-4xl font-bold">{item.title}</div>
+                <div class="mt-4 text-lg">{item.content}</div>
+                <a href={`#features-${index}`} class="absolute inset-0"></a>
+              </div>
+            {:else}
+              <div class="text-white/10 hover:text-white/30">
+                <div class="font-epilogue text-4xl font-bold">{item.title}</div>
+                <div class="mt-4 text-lg">{item.content}</div>
+                <a href={`#features-${index}`} class="absolute inset-0"></a>
+              </div>
+            {/if}
+          </ScrollObserver.Trigger>
+        {/each}
+      </ScrollObserver.TriggerGroup>
+    </ScrollObserver>
   </div>
-  
-</main>
+</div>
 
 <Footer />
