@@ -71,11 +71,9 @@
    </section>
    <section class="mb-16 relative">
       <div class="relative w-full mx-auto">
-         <img 
-            src="/aanpak.jpg"
-            alt="Aanpakimg" 
-            class="w-full md:w-full h-[20rem] flex justify-center items-center md:h-80 object-cover rounded-b-3xl md:rounded-r-full blur-sm"
-            />
+  <div
+    class="bg-[#1C2122] py-24 md:py-48 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
+  >
          <div class="absolute inset-0 rounded-3xl text-white pl-4 pt-16 md:pt-24 md:pl-48"
             >
             <div class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
@@ -138,11 +136,9 @@
    </section>
    <section class="mb-16 relative">
       <div class="relative w-full mx-auto">
-         <img 
-            src="/implementatie.jpg"
-            alt="Implementatieimg" 
-            class="w-full md:w-full h-[20rem] flex justify-center items-center md:h-80 object-cover rounded-b-3xl md:rounded-r-full blur-sm"
-            />
+  <div
+    class="bg-[#1C2122] py-24 md:py-48 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
+  >
          <div class="absolute inset-0 rounded-3xl text-white pl-4 pt-16 md:pt-24 md:pl-48"
             >
             <div class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
