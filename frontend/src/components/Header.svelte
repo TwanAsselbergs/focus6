@@ -29,7 +29,7 @@
 >
   <nav
     class="bg-white transition-all duration-500 p-4 {$scrolled
-      ? 'shadow-sm'
+      ? 'shadow-sm rounded-b-xl'
       : 'shadow-none'}"
   >
     <div class="flex justify-between items-center">
@@ -115,7 +115,7 @@
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div
-      class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-50 z-30 transition-opacity duration-500 ease-in-out"
+      class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-40 z-30 transition-opacity duration-500 ease-in-out"
       on:click={handleBackDropClick}
     ></div>
   {/if}
@@ -134,12 +134,14 @@
       </button>
     </div>
 
-    <ul class="flex flex-col items-center pt-24 font-bold text-lg">
+    <ul
+      class="flex flex-col items-center pt-24 font-semibold text-lg space-y-3"
+    >
       <li class="py-3">
         <a
           href="/"
           class="{$currentPath === '/'
-            ? 'bg-gray-100'
+            ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Home</a
         >
@@ -148,7 +150,7 @@
         <a
           href="/concept"
           class="{$currentPath === '/concept'
-            ? 'bg-gray-100'
+            ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Spiegelconcept</a
         >
@@ -157,7 +159,7 @@
         <a
           href="/services"
           class="{$currentPath === '/services'
-            ? 'bg-gray-100'
+            ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Dienstverlening</a
         >
@@ -166,7 +168,7 @@
         <a
           href="/contact"
           class="{$currentPath === '/contact'
-            ? 'bg-gray-100'
+            ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Contact</a
         >
