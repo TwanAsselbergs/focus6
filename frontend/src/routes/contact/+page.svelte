@@ -22,7 +22,7 @@
     class="bg-[#1C2122] py-24 md:py-48 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
   >
     <h1 class="text-5xl font-bold text-white">Contact</h1>
-    <p class="text-gray-400">Neem contact met ons op</p>
+    <p class="text-gray-400 font-semibold">Neem contact met ons op</p>
   </div>
 
   <div class="bg-white py-24">
