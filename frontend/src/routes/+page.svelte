@@ -16,7 +16,7 @@
 
 <Header />
 
-<main class="pt-[88px] md:pt-28">
+<main class="pt-24">
   <section class="mb-16 relative">
     <div class="relative w-full mx-auto">
       <img
