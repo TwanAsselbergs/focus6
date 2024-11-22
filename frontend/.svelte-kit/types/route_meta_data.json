@@ -11,5 +11,8 @@
 	],
 	"/services": [
 		"src/routes/+layout.js"
+	],
+	"/spiegelspel": [
+		"src/routes/+layout.js"
 	]
 }
