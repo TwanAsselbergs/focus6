@@ -6,6 +6,15 @@
   let currentIndex = 0;
   const reviews = ["Test", "Test 2", "Test 3", "Test 4", "Test 5"];
 
+  let post = {};
+
+  onMount(async () => {
+    const res = await fetch(
+      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/29",
+    );
+    post = await res.json();
+  });
+
   onMount(() => {
     const interval = setInterval(() => {
       currentIndex = (currentIndex + 1) % reviews.length;
@@ -40,10 +49,7 @@
           <p
             class="w-11/12 md:w-3/4 text-center md:text-left text-md md:text-base pt-4 pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)]"
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui
-            consequatur esse doloribus autem eos nisi voluptatum ipsa. Expedita
-            fuga mollitia unde impedit. Facere, saepe sequi cumque at
-            consequuntur possimus quaerat?
+            {post.header_paragraph}
           </p>
           <a
             href="/concept"
@@ -73,12 +79,7 @@
               class="text-[#185CE6]">6</span
             ></span
           >
-          biedt met haar Spiegelconcept een verfrissende en activerende aanpak om
-          te werken aan de ontwikkeling van de lerende organisatie. Het concept is
-          in te zetten op teamniveau en snel op te schalen naar organisatieniveau.
-          Alles is in de praktijk ontwikkeld en toegepast. We geloven in de kracht
-          van teams. In onze optiek onderscheidt een team zich als het goed samenwerkt,
-          leert van ervaringen en innoveert om steeds beter te presteren.
+          {post.paragraph_1}
         </p>
         <p class="mt-8 mb-4 md:mb-0 md:mt-4 text-sm md:text-md">
           Kortom: <span class="text-decoration-line: underline"
@@ -127,10 +128,8 @@
           Wat houdt het in?
         </h2>
         <p class="w-10/12 md:w-full mx-auto text-lg text-gray-700">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam
-          accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus
-          odit iure ab atque adipisci molestiae reiciendis similique asperiores
-          voluptate. <span
+          {post.paragraph_2}
+          <span
             ><a href="/concept" class="hover:underline text-blue-500"
               >Lees meer...</a
             ></span

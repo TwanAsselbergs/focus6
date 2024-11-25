@@ -2,7 +2,6 @@
   import { onMount } from "svelte";
   import Header from "../../components/Header.svelte";
   import Footer from "../../components/Footer.svelte";
-  import postcss from "postcss";
 
   let post = {};
 
