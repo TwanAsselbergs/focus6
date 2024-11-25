@@ -16,10 +16,10 @@
             <div class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
                >
                <h2 class="text-4xl md:text-7xl font-semibold pb-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)] text-center md:text-left">Het Spiegelconcept</h2>
-               <p class="w-11/12 md:w-3/4 text-center md:text-left text-lg md:text-base pt-4 pb-8 [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)] transition-all duration-500 ease-in-out hover:[text-shadow:_0_2px_4px_rgb(255_255_255)]">
+               <p class="w-11/12 md:w-3/4 text-center md:text-left text-lg md:text-base pt-4 pb-8 [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)]">
                   Met het Spiegelconcept geeft u invulling aan een lerende organisatie. Met deze aanpak spiegel je je als professional, team en organisatie systematisch aan de hoogste kwaliteitsstandaarden en de behoeften vanuit je omgeving. Je gebruikt de leerpunten die hieruit naar voren komen om je dienstverlening te ontwikkelen.
                </p>
-               <p class="w-11/12 md:w-3/4 text-center md:text-left text-lg md:text-base pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)] md:block md:opacity-0 opacity-100 transition-all duration-500 ease-in-out hover:[text-shadow:_0_2px_4px_rgb(255_255_255)]">
+               <p class="w-11/12 md:w-3/4 text-center md:text-left text-lg md:text-base pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)] md:block md:opacity-0 opacity-100">
                   In het Spiegelconcept ligt de focus op teamontwikkeling. Daar vindt de feitelijke dienstverlening immers plaats. Het Spiegelconcept is makkelijk schaalbaar. Daardoor is het concept ook organisatiebreed toepasbaar. 
                </p>
             </div>
@@ -28,46 +28,53 @@
    </section>
    <hr class="w-1/4 flex justify-center items-center mx-auto pb-12 md:pb-14" />
    <section>
-      <div class="flex flex-col md:flex-row justify-center items-center">
-         <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
-            <h2
-               class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
-               >
-               Het concept
-            </h2>
-            <p class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg transition-all duration-500 ease-in-out hover:[text-shadow:_0_0.1px_0.5px_rgb(0_0_25)]">
-               Uit ervaring weten we dat de motivatie van in publieke organisaties wel in orde is.  Winst is vooral te behalen als professionals gaan samenwerken aan gedeelde doelen in het team. Daarbij dient het gesprek zich te richten op de prestaties en de kwaliteit van het team. Door de teamleden voortdurend in dialoog te laten gaan, wisselen zij verschillende perspectieven en zienswijzen uit.. Zo leren de teamleden van elkaar en ontstaat ruimte voor vernieuwing. Het team ervaart energie, inspiratie en verbinding. Het team bouwt aan een lerende cultuur.
-            </p>
-         </div>
-         <img
-            src="/spiegelconcept.png"
-            alt="Img"
-            class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0"
-            />
-      </div>
-      <div
-         class="flex flex-col-reverse md:flex-row items-center md:justify-center my-24 md:my-48"
-         >
-         <div
-            class=" w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12"
-            >
-            <img
-               src="/samensturen.jpg"
-               alt="Img"
-               class="w-auto md:w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12"
-               />
-         </div>
-         <div class="text-center md:w-1/3 md:ml-36">
-            <h2 class="text-2xl md:text-3xl font-bold pb-6 md:pt-0">
-               Samen sturen
-            </h2>
-            <p
-               class="w-10/12 flex justify center items-center mx-auto flex-col text-lg transition-all duration-500 ease-in-out hover:[text-shadow:_0_0.1px_0.5px_rgb(0_0_25)]"
-               >
-               Vanuit een positieve insteek willen wij eraan bijdragen dat teams beter functioneren en plezier beleven in hun werk. De omgeving waarin de teams opereren is complex  en clienten en stakeholders zijn kritisch. Van het team vraagt dit daadkracht, professionaliteit en flexibliteit. Op een praktische en speelse manier helpen we teams om deze dynamiek hanteerbaar te maken. Door als team samen sturing te geven aan deze ontwikkelingen kan zij de dienstverlening daarop aanpassen. Wij noemen dat Samen Sturen. Ieder draagt vanuit zijn eigen rol en verantwoordelijkheid bij aan de doelen van het team, of je nu manager, professional of ondersteuner bent. <span>
-            </p>
-         </div>
-      </div>
+<div class="flex flex-col md:flex-row justify-center items-center">
+   <!-- Left Content -->
+   <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
+      <h2
+         class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
+      >
+         Het concept
+      </h2>
+      <p class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg transition-all duration-500 ease-in-out hover:[text-shadow:_0_0.1px_0.5px_rgb(0_0_25)]">
+         Uit ervaring weten we dat de motivatie van in publieke organisaties wel in orde is.  Winst is vooral te behalen als professionals gaan samenwerken aan gedeelde doelen in het team. Daarbij dient het gesprek zich te richten op de prestaties en de kwaliteit van het team. Door de teamleden voortdurend in dialoog te laten gaan, wisselen zij verschillende perspectieven en zienswijzen uit.. Zo leren de teamleden van elkaar en ontstaat ruimte voor vernieuwing. Het team ervaart energie, inspiratie en verbinding. Het team bouwt aan een lerende cultuur.
+      </p>
+   </div>
+
+   <!-- Image with Animation -->
+   <img
+      src="/spiegelconcept.png"
+      alt="Visualisatie van het Spiegelconcept"
+      class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 transition-transform duration-500 ease-in-out hover:scale-110"
+   />
+</div>
+<div
+   class="flex flex-col-reverse md:flex-row items-center md:justify-center my-24 md:my-48"
+>
+   <!-- Image Container with Animation -->
+   <div
+      class="w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12"
+   >
+      <img
+         src="/samensturen.jpg"
+         alt="Visualisatie van Samen Sturen"
+         class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-110"
+      />
+   </div>
+
+   <!-- Text Content -->
+   <div class="text-center md:w-1/3 md:ml-36">
+      <h2 class="text-2xl md:text-3xl font-bold pb-6 md:pt-0">
+         Samen sturen
+      </h2>
+      <p
+         class="w-10/12 flex justify-center items-center mx-auto flex-col text-lg transition-all duration-500 ease-in-out hover:[text-shadow:_0_0.1px_0.5px_rgb(0_0_25)]"
+      >
+         Vanuit een positieve insteek willen wij eraan bijdragen dat teams beter functioneren en plezier beleven in hun werk. De omgeving waarin de teams opereren is complex en cliënten en stakeholders zijn kritisch. Van het team vraagt dit daadkracht, professionaliteit en flexibiliteit. Op een praktische en speelse manier helpen we teams om deze dynamiek hanteerbaar te maken. Door als team samen sturing te geven aan deze ontwikkelingen kan zij de dienstverlening daarop aanpassen. Wij noemen dat Samen Sturen. Ieder draagt vanuit zijn eigen rol en verantwoordelijkheid bij aan de doelen van het team, of je nu manager, professional of ondersteuner bent.
+      </p>
+   </div>
+</div>
+
    </section>
    <section class="mb-16 relative">
       <div class="relative w-full mx-auto">
@@ -79,7 +86,7 @@
             <div class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
                >
                <h2 class="text-4xl md:text-7xl font-semibold pb-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_1)] text-center md:text-left">Aanpak</h2>
-               <p class="w-11/12 md:w-4/4 text-center md:text-left text-lg md:text-base pt-4 pb-8 transition-all duration-500 ease-in-out hover:[text-shadow:_0_2px_4px_rgb(255_255_255)]">
+               <p class="w-11/12 md:w-4/4 text-center md:text-left text-lg md:text-base pt-4 pb-8">
                   Het Spiegelconcept bestaat uit verschillende instrumenten, die onderling samenhangen. Hieronder bespreken we kort de belangrijkste instrumenten. 
                </p>
             </div>
@@ -88,35 +95,40 @@
    </section>
    <hr class="w-1/4 flex justify-center items-center mx-auto pb-12 md:pb-14" />
    <section>
-      <div class="flex flex-col md:flex-row justify-center items-center">
-         <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
-            <h2
-               class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
-               >
-               Het TeamKompas
-            </h2>
-            <p class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg transition-all duration-500 ease-in-out hover:[text-shadow:_0_0.1px_0.5px_rgb(0_0_25)]">
-               Om de koers van het team te bepalen starten we door samen met het team een TeamKompas te maken. De basis hiervoor zijn de overtuigingen en leidende principes van team. Het Teamkompas geeft het team koers voor de langere termijn. Vervolgens maken we het teamplan dat zo mogelijk gevoed wordt door (zelf-)evaluaties klant- en omgevingsonderzoek.  
-            </p>
-         </div>
-         <img
-            src="/teamkompas.png"
-            alt="Teamkompaspng"
-            class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0"
-            />
-      </div>
+<div class="flex flex-col md:flex-row justify-center items-center">
+   <!-- Text Content -->
+   <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
+      <h2
+         class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
+      >
+         Het TeamKompas
+      </h2>
+      <p class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg transition-all duration-500 ease-in-out hover:[text-shadow:_0_0.1px_0.5px_rgb(0_0_25)]">
+         Om de koers van het team te bepalen starten we door samen met het team een TeamKompas te maken. De basis hiervoor zijn de overtuigingen en leidende principes van team. Het Teamkompas geeft het team koers voor de langere termijn. Vervolgens maken we het teamplan dat zo mogelijk gevoed wordt door (zelf-)evaluaties klant- en omgevingsonderzoek.  
+      </p>
+   </div>
+
+   <!-- Compass Image with Animation -->
+   <img
+      src="/teamkompas.png"
+      alt="Visualisatie van TeamKompas"
+      class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 transition-transform duration-500 ease-in-out hover:rotate-[15deg] hover:scale-105"
+   />
+</div>
+
       <div
          class="flex flex-col-reverse md:flex-row items-center md:justify-center my-24 md:my-48"
          >
-         <div
-            class=" w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12"
-            >
-            <img
-               src="/teamplan.png"
-               alt="Teamplanpng"
-               class="w-auto md:w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12"
-               />
-         </div>
+<div
+   class="w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12"
+>
+   <img
+      src="/teamplan.png"
+      alt="Visualisatie van Teamplan"
+      class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
+   />
+</div>
+
          <div class="text-center md:w-1/3 md:ml-36">
             <h2 class="text-2xl md:text-3xl font-bold pb-6 md:pt-0">
                Het Teamplan
@@ -147,8 +159,8 @@
          </div>
          <img
             src="/stakeholders.png"
-            alt="Teamkompaspng"
-            class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5"
+            alt="Stakeholders"
+            class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
             />
       </div>
    </section>
@@ -156,7 +168,7 @@
       <div class="relative w-full mx-auto">
          <div
             id="black-div"
-            class="bg-[#1C2122] py-4 md:py-24 md:pt-1 rounded-b-3xl md:rounded-r-full text-center animate-fade-in transition-all duration-500 ease-in-out hover:[text-shadow:_0_2px_4px_rgb(255_255_255)]"
+            class="bg-[#1C2122] py-4 md:py-24 md:pt-1 rounded-b-3xl md:rounded-r-full text-center animate-fade-in"
             >
             <div class="text-white px-4 pt-16 md:pt-24 md:px-48">
                <div
@@ -228,8 +240,8 @@
          </div>
          <img
             src="/evaluatie.png"
-            alt="Teamkompaspng"
-            class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5"
+            alt="Evaluatie"
+            class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
             />
       </div>
       <div class="flex flex-col md:flex-row justify-center items-center">
@@ -245,8 +257,8 @@
          </div>
          <img
             src="/proces.png"
-            alt="Teamkompaspng"
-            class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5"
+            alt="Process"
+            class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
             />
       </div>
       <div
@@ -257,8 +269,8 @@
             >
             <img
                src="/logo.png"
-               alt="Teamplanpng"
-               class="w-auto md:w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12"
+               alt="Focus6"
+               class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
                />
          </div>
          <div class="text-center md:w-1/3 md:ml-36">
