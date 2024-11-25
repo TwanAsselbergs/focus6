@@ -47,7 +47,7 @@
             >!
           </h2>
           <p
-            class="w-11/12 md:w-3/4 text-center md:text-left text-md md:text-base pt-4 pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)]"
+            class="w-11/12 md:w-3/4 text-center md:text-left text-lg pt-4 pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)]"
           >
             {post.header_paragraph}
           </p>
