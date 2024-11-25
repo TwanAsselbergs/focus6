@@ -106,9 +106,9 @@
         <p
           class="pl-6 text-white text-md w-10/12 truncate md:overflow-visible md:whitespace-normal md:text-clip"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis illum
-          asperiores nostrum dolorem quo maiores dolores ipsa, iure eaque
-          corrupti perferendis...
+          Met het Spiegelconcept geeft u invulling aan een lerende organisatie.
+          Met deze aanpak spiegel je je als professional, team en organisatie
+          systematisch aan de hoogste...
         </p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
