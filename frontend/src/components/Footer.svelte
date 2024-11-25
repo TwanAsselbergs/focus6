@@ -116,7 +116,7 @@
       <img src="/logo.png" alt="Logo" class="w-24 h-auto hidden md:block" />
     </a>
     <p class="text-gray-600 text-xs">
-      &copy; Copyright 2024. Alle rechten voorbehouden.
+      {post.copyright}
     </p>
   </div>
 </footer>
