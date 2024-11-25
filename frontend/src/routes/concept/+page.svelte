@@ -145,7 +145,7 @@
             </p>
          </div>
       </div>
-      <div class="flex flex-col md:flex-row justify-center items-center">
+       <div class="flex flex-col md:flex-row justify-center items-center">
          <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
             <h2
                class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
@@ -159,8 +159,8 @@
          </div>
          <img
             src="/stakeholders.png"
-            alt="Stakeholders"
-            class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
+            alt="Teamkompaspng"
+            class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5"
             />
       </div>
    </section>
@@ -168,7 +168,7 @@
       <div class="relative w-full mx-auto">
          <div
             id="black-div"
-            class="bg-[#1C2122] py-4 md:py-24 md:pt-1 rounded-b-3xl md:rounded-r-full text-center animate-fade-in"
+            class="bg-[#1C2122] py-4 md:py-24 md:pt-1 rounded-b-3xl md:rounded-r-full text-center animate-fade-in transition-all duration-500 ease-in-out hover:[text-shadow:_0_2px_4px_rgb(255_255_255)]"
             >
             <div class="text-white px-4 pt-16 md:pt-24 md:px-48">
                <div
@@ -240,8 +240,8 @@
          </div>
          <img
             src="/evaluatie.png"
-            alt="Evaluatie"
-            class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
+            alt="Teamkompaspng"
+            class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5"
             />
       </div>
       <div class="flex flex-col md:flex-row justify-center items-center">
@@ -257,8 +257,8 @@
          </div>
          <img
             src="/proces.png"
-            alt="Process"
-            class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
+            alt="Teamkompaspng"
+            class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5"
             />
       </div>
       <div
@@ -269,8 +269,8 @@
             >
             <img
                src="/logo.png"
-               alt="Focus6"
-               class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
+               alt="Teamplanpng"
+               class="w-auto md:w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12"
                />
          </div>
          <div class="text-center md:w-1/3 md:ml-36">
