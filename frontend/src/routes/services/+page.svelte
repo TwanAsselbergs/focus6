@@ -98,7 +98,7 @@
 
     <!-- Grid -->
     <main
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 px-10 mt-10"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-10 mt-10"
     >
       {#each services as service}
         <div
