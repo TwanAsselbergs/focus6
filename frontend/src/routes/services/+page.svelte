@@ -2,19 +2,20 @@
   import Header from "../../components/Header.svelte";
   import Footer from "../../components/Footer.svelte";
 
+  // Dummy data
   let services = [
     {
       id: 1,
       name: "Teamkompas.",
-      description: "Plaatje.",
-      icon: "/kompas.jpg",
+      description: "Test",
+      icon: "/kompas.png",
     },
     {
       id: 2,
       name: "Zelfevaluatie.",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "📋",
+      icon: "/zelfevaluatie.png",
     },
     {
       id: 3,
@@ -86,63 +87,36 @@
 <div
   class="min-h-screen bg-white-100 light:bg-gray-100 text-gray-900 dark:text-gray-900"
 >
-  <header class="py-8 text-center">
-    <h1 class="text-4xl font-bold">Onze diensten!</h1>
-    <p class="mt-2 text-gray-600 dark:text-gray-300">
-      Ontdek wat wij u bieden!
-    </p>
-  </header>
-
-  <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-8">
-    {#each services as service}
-      <div
-        on:click={() => openModal(service)}
-        class="group relative p-6 bg-white dark:bg-gray-100 rounded-2xl shadow-xl cursor-pointer transition-transform transform hover:scale-105"
-      >
-        <img src={service.icon} class="w-16 h-16 object-contain mx-auto" />
-        <h2 class="mt-4 text-xlz font-semibold">{service.name}</h2>
-        <p class="mt-2 text-gray-600 dark:text-gray-900">
-          {service.description}
-        </p>
-        <div
-          class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-25 transition-opacity"
-        ></div>
-      </div>
-    {/each}
-  </main>
-
-  {#if showModal}
-    <div class="modal-backdrop" on:click={closeModal}>
-      <div class="modal-content" on:click|stopPropagation>
-        <button
-          class="absolute top-4 right-4 text-2xl text-gray-600 dark:text-gray-300"
-          on:click={closeModal}
-        >
-          &times;
-        </button>
-        <div class="text-center">
-          <h2 class="text-2xl font-bold">{selectedService.name}</h2>
-          <p class="mt-4 text-gray-600 dark:text-gray-300">
-            {selectedService.description}
-          </p>
-          <button
-            class="mt-6 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-          >
-            Plaatje hier
-          </button>
-        </div>
-      </div>
+  <main class="mt-24">
+    <!-- Header -->
+    <div
+      class="bg-[#1C2122] py-24 md:py-48 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
+    >
+      <h1 class="text-5xl font-bold text-white">Dienstverlening</h1>
+      <p class="text-gray-400 font-semibold">Onze diensten</p>
     </div>
-  {/if}
+
+    <!-- Grid -->
+    <main
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 px-10 mt-10"
+    >
+      {#each services as service}
+        <div
+          class="group relative p-4 bg-white dark:bg-gray-100 rounded-2xl cursor-pointer transition-transform transform hover:scale-105 hover:shadow-xl"
+        >
+          <img src={service.icon} class="w-40 h-40 object-contain mx-auto" />
+          <h2 class="mt-4 text-2xl font-semibold">{service.name}</h2>
+          <p class="mt-2 text-xl text-gray-600 dark:text-gray-900">
+            {service.description}
+          </p>
+          <div class="absolute inset-0 bg-black bg-opacity-0"></div>
+        </div>
+      {/each}
+    </main>
+  </main>
 </div>
 
 <Footer />
 
 <style>
-  .modal-backdrop {
-    @apply fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center;
-  }
-  .modal-content {
-    @apply bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg w-11/12 sm:w-3/4 lg:w-1/2 relative;
-  }
 </style>
