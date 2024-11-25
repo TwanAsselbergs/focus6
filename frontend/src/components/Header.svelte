@@ -29,7 +29,7 @@
 >
   <nav
     class="bg-white transition-all duration-500 p-4 {$scrolled
-      ? 'shadow-sm rounded-b-xl'
+      ? 'shadow-sm rounded-b-3xl'
       : 'shadow-none'}"
   >
     <div class="flex justify-between items-center">
