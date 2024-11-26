@@ -1,6 +1,16 @@
 <script>
   import Header from "../../components/Header.svelte";
   import Footer from "../../components/Footer.svelte";
+  import { onMount } from "svelte";
+
+  let post = {};
+
+  onMount(async () => {
+    const res = await fetch(
+      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/32",
+    );
+    post = await res.json();
+  });
 </script>
 
 <Header />
@@ -20,23 +30,11 @@
       Het Spiegelconcept
     </h2>
     <p class="w-4/6 pt-8 text-lg text-gray-700">
-      Met het Spiegelconcept geeft u invulling aan een lerende organisatie. Met
-      deze aanpak spiegel je je als professional, team en organisatie
-      systematisch aan de hoogste kwaliteitsstandaarden en de behoeften vanuit
-      je omgeving. Je gebruikt de leerpunten die hieruit naar voren komen om je
-      dienstverlening te ontwikkelen.
+      {post.spiegelconcept_1}
       <br /> <br />
-      In het Spiegelconcept ligt de focus op teamontwikkeling. Daar vindt de feitelijke
-      dienstverlening immers plaats. Het Spiegelconcept is makkelijk schaalbaar.
-      Daardoor is het concept ook organisatiebreed toepasbaar.
+      {post.spiegelconcept_2}
       <br /> <br />
-      Uit ervaring weten we dat de motivatie van in publieke organisaties wel in
-      orde is. Winst is vooral te behalen als professionals gaan samenwerken aan
-      gedeelde doelen in het team. Daarbij dient het gesprek zich te richten op de
-      prestaties en de kwaliteit van het team. Door de teamleden voortdurend in dialoog
-      te laten gaan, wisselen zij verschillende perspectieven en zienswijzen uit..
-      Zo leren de teamleden van elkaar en ontstaat ruimte voor vernieuwing. Het team
-      ervaart energie, inspiratie en verbinding. Het team bouwt aan een lerende cultuur.
+      {post.spiegelconcept_3}
     </p>
   </div>
 
@@ -52,22 +50,14 @@
         <p
           class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg transition-all duration-500 ease-in-out text-gray-700"
         >
-          Uit ervaring weten we dat de motivatie van in publieke organisaties
-          wel in orde is. Winst is vooral te behalen als professionals gaan
-          samenwerken aan gedeelde doelen in het team. Daarbij dient het gesprek
-          zich te richten op de prestaties en de kwaliteit van het team. Door de
-          teamleden voortdurend in dialoog te laten gaan, wisselen zij
-          verschillende perspectieven en zienswijzen uit.. Zo leren de teamleden
-          van elkaar en ontstaat ruimte voor vernieuwing. Het team ervaart
-          energie, inspiratie en verbinding. Het team bouwt aan een lerende
-          cultuur.
+          {post.concept}
         </p>
       </div>
 
       <!-- Image with Animation -->
       <img
-        src="/spiegelconcept.png"
-        alt="Visualisatie van het Spiegelconcept"
+        src={post.img_concept}
+        alt="Concept"
         class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 transition-transform duration-500 ease-in-out hover:scale-110"
       />
     </div>
@@ -77,8 +67,8 @@
       <!-- Image Container with Animation -->
       <div class="w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12">
         <img
-          src="/samensturen.jpg"
-          alt="Visualisatie van Samen Sturen"
+          src={post.img_samen_sturen}
+          alt="Samen Sturen"
           class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-110"
         />
       </div>
@@ -91,16 +81,7 @@
         <p
           class="w-10/12 flex justify-center items-center mx-auto flex-col text-lg transition-all duration-500 ease-in-out"
         >
-          Vanuit een positieve insteek willen wij eraan bijdragen dat teams
-          beter functioneren en plezier beleven in hun werk. De omgeving waarin
-          de teams opereren is complex en cliënten en stakeholders zijn
-          kritisch. Van het team vraagt dit daadkracht, professionaliteit en
-          flexibiliteit. Op een praktische en speelse manier helpen we teams om
-          deze dynamiek hanteerbaar te maken. Door als team samen sturing te
-          geven aan deze ontwikkelingen kan zij de dienstverlening daarop
-          aanpassen. Wij noemen dat Samen Sturen. Ieder draagt vanuit zijn eigen
-          rol en verantwoordelijkheid bij aan de doelen van het team, of je nu
-          manager, professional of ondersteuner bent.
+          {post.samen_sturen}
         </p>
       </div>
     </div>
@@ -116,7 +97,9 @@
   <section>
     <div class="flex flex-col md:flex-row justify-center items-center">
       <!-- Text Content -->
-      <div class="text-gray-800 md:w-1/2 flex justify-center items-center flex-col md:block">
+      <div
+        class="text-gray-800 md:w-1/2 flex justify-center items-center flex-col md:block"
+      >
         <h2
           class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
         >
@@ -125,18 +108,14 @@
         <p
           class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg transition-all duration-500 ease-in-out"
         >
-          Om de koers van het team te bepalen starten we door samen met het team
-          een TeamKompas te maken. De basis hiervoor zijn de overtuigingen en
-          leidende principes van team. Het Teamkompas geeft het team koers voor
-          de langere termijn. Vervolgens maken we het teamplan dat zo mogelijk
-          gevoed wordt door (zelf-)evaluaties klant- en omgevingsonderzoek.
+          {post.teamkompas}
         </p>
       </div>
 
       <!-- Compass Image with Animation -->
       <img
-        src="/teamkompas.png"
-        alt="Visualisatie van TeamKompas"
+        src={post.img_teamkompas}
+        alt="TeamKompas"
         class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 transition-transform duration-500 ease-in-out hover:rotate-[15deg] hover:scale-105"
       />
     </div>
@@ -146,7 +125,7 @@
     >
       <div class="w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12">
         <img
-          src="/teamplan.png"
+          src={post.img_teamplan}
           alt="Visualisatie van Teamplan"
           class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-105"
         />
@@ -159,21 +138,13 @@
         <p
           class="w-10/12 flex justify center items-center mx-auto flex-col text-lg transition-all duration-500 ease-in-out"
         >
-          In het Teamplan legt het team de ambities voor de komende jaren vast,
-          door haar doelen te bepalen. Aan deze doelen koppelt het team
-          'eigenaren'. Zij dragen zorg voor de realisatie van deze doelen.
+          {post.teamplan_1}
         </p>
         <br />
         <p
           class="w-10/12 flex justify center items-center mx-auto flex-col text-lg transition-all duration-500 ease-in-out"
         >
-          Het teamplan wordt gevoed op basis van interne en externe analyses die
-          we samen met het team uitvoeren. In workshops gaat het team zelf aan
-          de slag en met direct resultaat. Het uitgangspunt is dat de teams zelf
-          niets hoeven voor te bereiden en uit te werken. Een coach begeleidt
-          het proces. De teamleden participeren actief en delen kennis en
-          inzichten. Voor de workshops gebruiken we in praktijk ontwikkelde
-          formats en spellen
+          {post.teamplan_2}
         </p>
       </div>
     </div>
@@ -188,7 +159,9 @@
       </h2>
     </div>
 
-    <div class="text-gray-800 flex flex-col md:flex-row justify-center items-center">
+    <div
+      class="text-gray-800 flex flex-col md:flex-row justify-center items-center"
+    >
       <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
         <h2
           class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
@@ -198,42 +171,34 @@
         <p
           class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg transition-all duration-500 ease-in-out"
         >
-          Jaarlijks maakt het team een nieuw teamplan. De zelfevaluatie en het
-          klantenonderzoek komen jaarlijks terug. De andere analyse & evaluatie
-          instrumenten worden gespreid over 3 jaar uitgevoerd. Eventueel kunnen
-          alternatieve audits of evaluaties worden ingepland. Hiermee kan
-          aangesloten worden op de 3 jarige certificeringscyclus.
+          {post.analyse_evaluatie}
         </p>
       </div>
       <img
-        src="/evaluatie.png"
-        alt="Visualisatie van evaluatie"
+        src={post.img_analyse_evaluatie}
+        alt="Analyse & Evaluatie"
         class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5 transition-transform duration-500 ease-in-out hover:scale-105"
       />
     </div>
 
     <div class="flex flex-col-reverse md:flex-row justify-center items-center">
       <img
-        src="/proces.png"
+        src={post.img_teamplan_cyclus}
         alt="Visualisatie van het process"
         class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5 transition-transform duration-500 ease-in-out hover:scale-105"
       />
-      <div class="text-gray-800 md:w-1/2 flex justify-center items-center flex-col md:block">
+      <div
+        class="text-gray-800 md:w-1/2 flex justify-center items-center flex-col md:block"
+      >
         <h2
           class="text-center md:text-center text-2xl md:text-3xl font-bold pb-6"
         >
-          Cyclus Teamplan
+          Teamplan Cyclus
         </h2>
         <p
           class="w-10/12 md:w-9/12 flex justify center items-center text-center mx-auto md:mx-auto flex-col text-lg transition-all duration-500 ease-in-out"
         >
-          Op teamniveau geeft het team invulling aan 'Samen sturen' middels een
-          wekelijkse 'check-in', een maandelijkse 'check-out' en een 'refresh'
-          per kwartaal. In een weekstart vindt de check-in plaats: het team komt
-          in actie. Bij de check-up kijkt het team hoe de kritische processen
-          lopen en of bijsturing nodig is. Bij de Refresh kijkt het team opnieuw
-          naar het teamplan en bepaalt het team of zij nog de 'goede dingen'
-          doet.
+          {post.teamplan_cyclus}
         </p>
       </div>
     </div>
