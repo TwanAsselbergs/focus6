@@ -20,6 +20,15 @@
   const handleBackDropClick = () => {
     openMenu.set(false);
   };
+
+  let post = {};
+
+  onMount(async () => {
+    const res = await fetch(
+      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/19",
+    );
+    post = await res.json();
+  });
 </script>
 
 <header
@@ -36,7 +45,7 @@
       <div>
         <a href="/"
           ><img
-            src="/logo.jpeg"
+            src={post.logo}
             alt="Logo"
             class="{$scrolled
               ? 'w-32 md:w-36'
