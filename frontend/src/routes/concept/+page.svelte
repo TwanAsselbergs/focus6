@@ -181,7 +181,9 @@
       />
     </div>
 
-    <div class="flex flex-col-reverse md:flex-row justify-center items-center">
+    <div
+      class="flex flex-col-reverse md:flex-row justify-center items-center mt-24"
+    >
       <img
         src={post.img_teamplan_cyclus}
         alt="Visualisatie van het process"
