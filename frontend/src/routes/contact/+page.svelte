@@ -1,6 +1,16 @@
 <script>
+  import { onMount } from "svelte";
   import Header from "../../components/Header.svelte";
   import Footer from "../../components/Footer.svelte";
+
+  let post = {};
+
+  onMount(async () => {
+    const res = await fetch(
+      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/21",
+    );
+    post = await res.json();
+  });
 
   let formData = {
     name: "",
@@ -19,15 +29,15 @@
 <main class="mt-24">
   <!-- Header -->
   <div
-    class="bg-[#1C2122] py-24 md:py-48 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
+    class="bg-[#1C2122] py-24 md:py-40 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
   >
-    <h1 class="text-5xl font-bold text-white">Contact</h1>
+    <h1 class="text-4xl md:text-5xl font-bold text-white">Contact</h1>
     <p class="text-gray-400 font-semibold">Neem contact met ons op</p>
   </div>
 
-  <div class="bg-white py-24">
+  <div class="bg-white pt-16 md:pt-24 pb-16 md:pb-16">
     <div
-      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center"
+      class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-24 items-center"
     >
       <!-- Text Content -->
       <div>
@@ -37,21 +47,18 @@
           Waarom contact opnemen?
         </h2>
         <p
-          class="text-lg text-gray-600 mb-6 text-center md:text-left px-6 md:px-0"
+          class="text-lg text-gray-700 mb-6 text-center md:text-left px-6 md:px-0"
         >
-          Heeft u vragen over onze diensten of wilt u meer informatie over hoe
-          wij u kunnen helpen? Neem gerust contact met ons op. Ons team staat
-          klaar om u te ondersteunen.
+          {post.paragraph_1}
         </p>
-        <p class="text-lg text-gray-600 text-center md:text-left px-6 md:px-0">
-          U kunt ook contact met ons opnemen voor een vrijblijvend gesprek of
-          offerte. We kijken ernaar uit om van u te horen!
+        <p class="text-lg text-gray-700 text-center md:text-left px-6 md:px-0">
+          {post.paragraph_2}
         </p>
-        <div class="mt-8 space-y-3">
+        <div class="mt-8 space-y-5 md:space-y-3">
           <a
-            href="mailto:info@focus6.nl"
+            href="mailto:{post.email}"
             aria-label="Email"
-            class="flex items-center space-x-2 w-44"
+            class="flex items-center space-x-2 md:w-44 ml-10 md:ml-0"
           >
             <svg viewBox="0 0 29 29" style="width:20px" class="text-black">
               <path
@@ -63,16 +70,14 @@
                 d="M23.998 7.48c.335.306.35.819.036 1.145l-5.898 6.103 5.88 5.728c.298.29.323.745.075 1.062l-.075.083a.847.847 0 01-1.176 0l-5.844-5.693-1.832 1.896a.847.847 0 01-1.21 0l-1.833-1.896L6.277 21.6a.847.847 0 01-1.176 0 .795.795 0 010-1.145l5.88-5.728-5.897-6.103a.795.795 0 01.035-1.145.847.847 0 011.176.035l8.264 8.552 8.264-8.552a.847.847 0 011.175-.035z"
               ></path>
             </svg>
-            <span
-              class="text-gray-600 text-sm md:text-lg font-semibold hover:underline"
+            <span class="text-gray-600 text-lg font-semibold hover:underline">
+              {post.email}</span
             >
-              info@focus6.nl
-            </span>
           </a>
           <a
-            href="tel:+0621937222"
+            href="tel:{post.phone}"
             aria-label="Phone"
-            class="flex items-center space-x-2 w-44"
+            class="flex items-center space-x-2 md:w-44 ml-10 md:ml-0"
           >
             <svg viewBox="0 0 29 29" style="width:20px" class="text-black">
               <path
@@ -84,13 +89,11 @@
                 d="M6.364 3.81c1.496-1.503 5.032-2.139 6.907-2.108 1.88-.218 1.273 8.104.313 8.263 0 0-3.039.384-3.125 1.275-.116 1.217 3.009 8.67 4.22 8.84.65.091 2.606-1.402 2.606-1.402 1.521-1.145 4.678 2.2 6.161 3.596.649.627.617 1.159-.059 1.947-1.181 1.322-4.29 3.439-5.52 3.266-2.988-.42-8.05-4.592-10.483-9.582-2.743-5.629-2.712-12.82-1.02-14.095z"
               ></path>
             </svg>
-            <span
-              class="text-gray-600 text-sm md:text-lg font-semibold hover:underline"
-            >
-              06-21937222
+            <span class="text-gray-600 text-lg font-semibold hover:underline">
+              {post.phone}
             </span>
           </a>
-          <div class="flex items-center space-x-2 pb-6">
+          <div class="flex items-center space-x-2 pb-6 ml-10 md:ml-0">
             <svg viewBox="0 0 29 29" style="width:20px" class="text-black">
               <g
                 fill="none"
@@ -106,8 +109,12 @@
                 ></path>
               </g>
             </svg>
-            <span class="text-gray-600 text-sm md:text-md font-semibold">
-              Burgemeester Norbruislaan 111, 3555 EE Utrecht, Nederland
+            <span
+              class="text-gray-600 text-sm md:text-md font-semibold flex flex-col md:block"
+            >
+              {post.address},&nbsp;<span>{post.postal_code},&nbsp;</span><span
+                >{post.country}</span
+              >
             </span>
           </div>
           <!-- svelte-ignore a11y_missing_attribute -->
@@ -128,9 +135,8 @@
         >
           Stuur ons een bericht
         </h2>
-        <p class="text-lg text-gray-500 pb-8 text-center md:text-left">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-          inventore reprehenderit, ex porro aspernatur.
+        <p class="text-lg text-gray-700 pb-8 text-center md:text-left">
+          {post.paragraph_3}
         </p>
         <form on:submit={handleSubmit} class="space-y-6">
           <div class="relative">
@@ -203,7 +209,7 @@
             <button
               type="submit"
               class="w-full bg-[#185CE6] hover:bg-[#2B67E8] text-white py-3 px-6 rounded-lg font-semibold transition-all"
-              >Verstuur</button
+              >Verzenden</button
             >
           </div>
         </form>

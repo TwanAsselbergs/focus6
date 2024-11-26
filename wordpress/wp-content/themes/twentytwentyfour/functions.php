@@ -204,3 +204,15 @@ if ( ! function_exists( 'twentytwentyfour_pattern_categories' ) ) :
 endif;
 
 add_action( 'init', 'twentytwentyfour_pattern_categories' );
+
+function expose_custom_fields_to_rest_api($data, $post, $context) {
+	$custom_fields = get_post_meta($post->ID);
+	if ($custom_fields) {
+			foreach ($custom_fields as $key => $value) {
+					$data->data[$key] = is_array($value) ? $value[0] : $value;
+			}
+	}
+	return $data;
+}
+add_filter('rest_prepare_post', 'expose_custom_fields_to_rest_api', 10, 3);
+add_filter('rest_prepare_page', 'expose_custom_fields_to_rest_api', 10, 3);

@@ -90,9 +90,9 @@
   <main class="mt-24">
     <!-- Header -->
     <div
-      class="bg-[#1C2122] py-24 md:py-48 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
+      class="bg-[#1C2122] py-24 md:py-40 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
     >
-      <h1 class="text-5xl font-bold text-white">Dienstverlening</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Dienstverlening</h1>
       <p class="text-gray-400 font-semibold">Onze diensten</p>
     </div>
 
@@ -101,10 +101,12 @@
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-10 mt-10"
     >
       {#each services as service}
-        <div
-          class="group relative p-4 bg-white dark:bg-gray-100 rounded-2xl cursor-pointer transition-transform transform hover:scale-105 hover:shadow-xl"
-        >
-          <img src={service.icon} class="w-40 h-40 object-contain mx-auto" />
+        <div class="group relative p-4 rounded-3xl">
+          <img
+            src={service.icon}
+            class="w-40 h-40 object-contain mx-auto"
+            alt="Services"
+          />
           <h2 class="mt-4 text-2xl font-semibold">{service.name}</h2>
           <p class="mt-2 text-xl text-gray-600 dark:text-gray-900">
             {service.description}
