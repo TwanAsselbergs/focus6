@@ -84,7 +84,7 @@
       </div>
 
       <!-- Text Content -->
-      <div class="text-center md:w-1/3 md:ml-36">
+      <div class=" text-gray-800 text-center md:w-1/3 md:ml-36">
         <h2 class="text-2xl md:text-3xl font-bold pb-6 md:pt-0">
           Samen Sturen
         </h2>
@@ -116,7 +116,7 @@
   <section>
     <div class="flex flex-col md:flex-row justify-center items-center">
       <!-- Text Content -->
-      <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
+      <div class="text-gray-800 md:w-1/2 flex justify-center items-center flex-col md:block">
         <h2
           class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
         >
@@ -152,7 +152,7 @@
         />
       </div>
 
-      <div class="text-center md:w-1/3 md:ml-36">
+      <div class=" text-gray-800 text-center md:w-1/3 md:ml-36">
         <h2 class="text-2xl md:text-3xl font-bold pb-6 md:pt-0">
           Het Teamplan
         </h2>
@@ -188,7 +188,7 @@
       </h2>
     </div>
 
-    <div class="flex flex-col md:flex-row justify-center items-center">
+    <div class="text-gray-800 flex flex-col md:flex-row justify-center items-center">
       <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
         <h2
           class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
@@ -218,7 +218,7 @@
         alt="Visualisatie van het process"
         class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5 transition-transform duration-500 ease-in-out hover:scale-105"
       />
-      <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
+      <div class="text-gray-800 md:w-1/2 flex justify-center items-center flex-col md:block">
         <h2
           class="text-center md:text-center text-2xl md:text-3xl font-bold pb-6"
         >
