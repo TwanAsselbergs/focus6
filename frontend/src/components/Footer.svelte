@@ -2,24 +2,12 @@
   import { onMount } from "svelte";
 
   let post = {};
-  let featuredImage = "";
 
   onMount(async () => {
-    const postRes = await fetch(
+    const res = await fetch(
       "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/1",
     );
-    if (postRes.ok) {
-      post = await postRes.json();
-
-      const mediaRes = await fetch(
-        `http://localhost/focus6/wordpress/wp-json/wp/v2/media/${post.featured_media}`,
-      );
-
-      if (mediaRes.ok) {
-        const mediaData = await mediaRes.json();
-        featuredImage = mediaData.source_url;
-      }
-    }
+    post = await res.json();
   });
 </script>
 
@@ -113,7 +101,7 @@
     class="flex justify-center items-center mx-auto bg-[#1C2122] p-10 md:gap-36"
   >
     <a href="/">
-      <img src="/logo.png" alt="Logo" class="w-24 h-auto hidden md:block" />
+      <img src={post.logo} alt="Logo" class="w-24 h-auto hidden md:block" />
     </a>
     <p class="text-gray-600 text-xs">
       {post.copyright}
