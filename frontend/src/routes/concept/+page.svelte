@@ -207,24 +207,25 @@
       </div>
       <img
         src="/evaluatie.png"
-        alt="Teamkompaspng"
-        class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5"
+        alt="Visualisatie van evaluatie"
+        class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5 transition-transform duration-500 ease-in-out hover:scale-105"
       />
     </div>
-    <div class="flex flex-col md:flex-row justify-center items-center">
+
+    <div class="flex flex-col-reverse md:flex-row justify-center items-center">
       <img
         src="/proces.png"
-        alt="Teamkompaspng"
-        class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5"
+        alt="Visualisatie van het process"
+        class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 mb-5 transition-transform duration-500 ease-in-out hover:scale-105"
       />
       <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
         <h2
-          class="text-center md:text-left text-2xl md:text-3xl font-bold pb-6"
+          class="text-center md:text-center text-2xl md:text-3xl font-bold pb-6"
         >
           Cyclus Teamplan
         </h2>
         <p
-          class="w-10/12 md:w-full text-center md:text-left md:pr-48 text-lg transition-all duration-500 ease-in-out"
+          class="w-10/12 md:w-9/12 flex justify center items-center text-center mx-auto md:mx-auto flex-col text-lg transition-all duration-500 ease-in-out"
         >
           Op teamniveau geeft het team invulling aan 'Samen sturen' middels een
           wekelijkse 'check-in', een maandelijkse 'check-out' en een 'refresh'
