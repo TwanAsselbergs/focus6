@@ -3,7 +3,6 @@
   import Header from "../components/Header.svelte";
   import Footer from "../components/Footer.svelte";
 
-  let currentIndex = 0;
   const reviews = ["Test", "Test 2", "Test 3", "Test 4", "Test 5"];
 
   let post = {};
@@ -13,13 +12,6 @@
       "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/29",
     );
     post = await res.json();
-  });
-
-  onMount(() => {
-    const interval = setInterval(() => {
-      currentIndex = (currentIndex + 1) % reviews.length;
-    }, 10000);
-    return () => clearInterval(interval);
   });
 </script>
 
@@ -146,19 +138,7 @@
         >
           Recensies
         </h2>
-        <div class="flex flex-row justify-center items-center">
-          {#each reviews as review, index (review)}
-            {#if index === currentIndex}
-              <div
-                class="text-center text-xl font-semibold"
-                transition:fade={{ duration: 800 }}
-                key={currentIndex}
-              >
-                {review}
-              </div>
-            {/if}
-          {/each}
-        </div>
+        <div class="flex flex-row justify-center items-center"></div>
       </div>
     </div>
   </section>
