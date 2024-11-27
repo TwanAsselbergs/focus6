@@ -1,124 +1,168 @@
 <script>
+  import { onMount } from "svelte";
   import Header from "../../components/Header.svelte";
   import Footer from "../../components/Footer.svelte";
 
-  // Dummy data
-  let services = [
-    {
-      id: 1,
-      name: "Teamkompas.",
-      description: "Test",
-      icon: "/kompas.png",
-    },
-    {
-      id: 2,
-      name: "Zelfevaluatie.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "/zelfevaluatie.png",
-    },
-    {
-      id: 3,
-      name: "Prestatiesturing.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "📊",
-    },
-    {
-      id: 4,
-      name: "Teamplan en -evaluatie.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "📱",
-    },
-    {
-      id: 5,
-      name: "Omgevingsanalyse -en aanpak.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "☁️",
-    },
-    {
-      id: 6,
-      name: "Stakeholdersanalyse en -strategie.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "🛒",
-    },
-    {
-      id: 7,
-      name: "Processen.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "📈",
-    },
-    {
-      id: 8,
-      name: "Projectmanagement.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "🎥",
-    },
-    {
-      id: 9,
-      name: "Teamontwikkeling en persoonlijke ontwikkeling.",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem aliquam accusamus doloribus nesciunt debitis eum dicta corporis, esse possimus odit iure ab atque adipisci molestiae reiciendis similique asperiores voluptate labore.",
-      icon: "💻",
-    },
-  ];
+  let post = {};
 
-  let selectedService = null;
-  let showModal = false;
-
-  const openModal = (service) => {
-    selectedService = service;
-    showModal = true;
-  };
-
-  const closeModal = () => {
-    selectedService = null;
-    showModal = false;
-  };
+  onMount(async () => {
+    const res = await fetch(
+      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/41",
+    );
+    post = await res.json();
+  });
 </script>
 
 <Header />
 
-<div
-  class="min-h-screen bg-white-100 light:bg-gray-100 text-gray-900 dark:text-gray-900"
->
-  <main class="mt-24">
-    <!-- Header -->
-    <div
-      class="bg-[#1C2122] py-24 md:py-40 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
-    >
-      <h1 class="text-4xl md:text-5xl font-bold text-white">Dienstverlening</h1>
-      <p class="text-gray-400 font-semibold">Onze diensten</p>
+<main class="mt-24">
+  <!-- Header -->
+  <div
+    class="bg-[#1C2122] py-24 md:py-40 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
+  >
+    <h1 class="text-4xl md:text-5xl font-bold text-white">Dienstverlening</h1>
+    <p class="text-gray-400 font-semibold">Onze diensten</p>
+  </div>
+
+  <!-- Grid -->
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-24 px-6 md:px-24 my-16 md:my-24"
+  >
+    <!-- Teamkompas -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_teamkompas}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Teamkompas"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_teamkompas}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_teamkompas}
+      </p>
     </div>
 
-    <!-- Grid -->
-    <main
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-10 mt-10"
-    >
-      {#each services as service}
-        <div class="group relative p-4 rounded-3xl">
-          <img
-            src={service.icon}
-            class="w-40 h-40 object-contain mx-auto"
-            alt="Services"
-          />
-          <h2 class="mt-4 text-2xl font-semibold">{service.name}</h2>
-          <p class="mt-2 text-xl text-gray-600 dark:text-gray-900">
-            {service.description}
-          </p>
-          <div class="absolute inset-0 bg-black bg-opacity-0"></div>
-        </div>
-      {/each}
-    </main>
-  </main>
-</div>
+    <!-- Zelfevaluatie -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_zelfevaluatie}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Zelfevaluatie"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_zelfevaluatie}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_zelfevaluatie}
+      </p>
+    </div>
+
+    <!-- Prestatiesturing -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_prestatiesturing}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Zelfevaluatie"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_prestatiesturing}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_prestatiesturing}
+      </p>
+    </div>
+
+    <!-- Teamplan -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_teamplan}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Zelfevaluatie"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_teamplan}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_teamplan}
+      </p>
+    </div>
+
+    <!-- Omgevingsanalyse -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_omgevingsanalyse}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Zelfevaluatie"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_omgevingsanalyse}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_omgevingsanalyse}
+      </p>
+    </div>
+
+    <!-- Stakeholdersanalyse -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_stakeholders}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Zelfevaluatie"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_stakeholders}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_stakeholders}
+      </p>
+    </div>
+
+    <!-- Processen -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_processen}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Zelfevaluatie"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_processen}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_processen}
+      </p>
+    </div>
+
+    <!-- Projectmanagament -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_management}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Zelfevaluatie"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_management}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_management}
+      </p>
+    </div>
+
+    <!-- Teamontwikkeling -->
+    <div class="p-4 rounded-3xl">
+      <img
+        src={post.img_teamontwikkeling}
+        class="w-40 h-40 object-contain mx-auto"
+        alt="Zelfevaluatie"
+      />
+      <h2 class="my-6 text-3xl font-semibold text-gray-800 text-center">
+        {post.title_teamontwikkeling}
+      </h2>
+      <p class="mt-2 text-lg text-gray-700 text-center">
+        {post.paragraph_teamontwikkeling}
+      </p>
+    </div>
+  </div>
+</main>
 
 <Footer />
-
-<style>
-</style>

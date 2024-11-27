@@ -182,7 +182,7 @@
     </div>
 
     <div
-      class="flex flex-col-reverse md:flex-row justify-center items-center mt-24"
+      class="flex flex-col-reverse md:flex-row justify-center items-center my-32"
     >
       <img
         src={post.img_teamplan_cyclus}

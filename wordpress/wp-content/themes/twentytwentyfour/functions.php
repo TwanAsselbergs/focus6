@@ -216,3 +216,12 @@ function expose_custom_fields_to_rest_api($data, $post, $context) {
 }
 add_filter('rest_prepare_post', 'expose_custom_fields_to_rest_api', 10, 3);
 add_filter('rest_prepare_page', 'expose_custom_fields_to_rest_api', 10, 3);
+
+function register_services_field_in_rest() {
+	register_post_meta('post', 'services', [
+			'show_in_rest' => true,
+			'single' => true,
+			'type' => 'string',
+	]);
+}
+add_action('rest_api_init', 'register_services_field_in_rest');

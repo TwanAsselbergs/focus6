@@ -45,7 +45,7 @@
           </p>
           <a
             href="/concept"
-            class="bg-[#185CE6] hover:bg-[#2B67E8] transition-all duration-500 py-4 px-6 md:py-4 md:px-6 rounded-lg font-semibold text-lg md:text-lg"
+            class="bg-[#185CE6] hover:bg-[#2B67E8] transition-all duration-500 py-4 px-6 md:py-4 rounded-lg font-semibold text-lg md:text-lg"
             >Spiegelconcept</a
           >
         </div>
