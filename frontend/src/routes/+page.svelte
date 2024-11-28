@@ -3,15 +3,24 @@
   import Header from "../components/Header.svelte";
   import Footer from "../components/Footer.svelte";
 
-  const reviews = ["Test", "Test 2", "Test 3", "Test 4", "Test 5"];
-
   let post = {};
+  let reviews = [];
+  let currentReviewIndex = 0;
 
   onMount(async () => {
-    const res = await fetch(
+    const postRes = await fetch(
       "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/29",
     );
-    post = await res.json();
+    post = await postRes.json();
+
+    const reviewsRes = await fetch(
+      "http://localhost/focus6/wordpress/wp-json/wp/v2/site-review",
+    );
+    reviews = await reviewsRes.json();
+
+    setInterval(() => {
+      currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+    }, 1000);
   });
 </script>
 
@@ -133,12 +142,19 @@
       <div
         class="w-11/12 md:w-[78%] mx-auto h-48 md:h-96 bg-gray-100 flex items-center flex-col rounded-3xl"
       >
-        <h2
-          class="text-gray-800 text-2xl md:text-4xl font-bold pt-6 md:pt-20 pb-8 md:pb-12"
-        >
+        <h2 class="text-gray-800 text-2xl md:text-4xl font-bold mt-12 mb-6">
           Recensies
         </h2>
-        <div class="flex flex-row justify-center items-center"></div>
+        {#if reviews.length > 0}
+          <div class="flex flex-col justify-center items-center w-1/2">
+            <h3 class="font-semibold text-2xl mb-4 text-center">
+              {reviews[currentReviewIndex].title.rendered}
+            </h3>
+            <p class="text-center">
+              {@html reviews[currentReviewIndex].content.rendered}
+            </p>
+          </div>
+        {/if}
       </div>
     </div>
   </section>

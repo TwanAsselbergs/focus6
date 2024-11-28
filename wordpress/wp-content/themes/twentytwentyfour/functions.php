@@ -225,3 +225,17 @@ function register_services_field_in_rest() {
 	]);
 }
 add_action('rest_api_init', 'register_services_field_in_rest');
+
+function register_reviews_post_type() {
+	register_post_type('site-review', [
+			'labels' => [
+					'name' => 'Reviews',
+					'singular_name' => 'Review',
+			],
+			'public' => true,
+			'show_in_rest' => true,
+			'supports' => ['title', 'editor'],
+	]);
+}
+
+add_action('init', 'register_reviews_post_type');
