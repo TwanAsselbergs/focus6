@@ -1,4 +1,7 @@
 <script>
+  import { onMount } from "svelte";
+  import { writable } from "svelte/store";
+
   let formData = {
     name: "",
     email: "",
@@ -9,29 +12,180 @@
     e.preventDefault();
     alert("Verstuurd");
   };
+
+  const scrolled = writable(false);
+  const currentPath = writable();
+  const openMenu = writable(false);
+
+  onMount(() => {
+    currentPath.set(window.location.pathname);
+
+    const handleScroll = () => {
+      scrolled.set(window.scrollY > 75);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
+
+  const handleBackDropClick = () => {
+    openMenu.set(false);
+  };
 </script>
 
-<header class="top-0 left-0 right-0 z-50 border-b bg-white">
-  <nav>
+<header
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out {$scrolled
+    ? 'h-16'
+    : 'h-24'} "
+>
+  <nav
+    class="bg-white transition-all duration-500 p-4 {$scrolled
+      ? 'shadow-sm rounded-b-3xl'
+      : 'shadow-none'}"
+  >
     <div class="flex justify-between items-center">
-      <div class="p-5">
-        <a href="">
-          <img src="/logo-spiegelspel.png" alt="Logo" class="" />
-        </a>
+      <div>
+        <a href="/"
+          ><img
+            src="/logo-spiegelspel.png"
+            alt="Logo"
+            class="{$scrolled
+              ? 'w-44 md:w-56'
+              : 'w-48 md:w-72'} h-auto md:ml-12 transition-all duration-500 my-3"
+          /></a
+        >
       </div>
-      <div class="pr-[10rem] text-black pt-2 max-lg:pr-[0rem] max-md:hidden">
-        <ul class="flex font-semibold items-center">
-          <li class="pr-10 text-2xl drop-shadow-lg">
-            <a href="/">Doel Spiegelspel</a>
+      <div class="pr-12 hidden md:block">
+        <ul class="flex font-semibold text-lg items-center">
+          <li class="pr-1">
+            <a
+              href="/"
+              class="{$currentPath === '/'
+                ? 'bg-gray-100 hover:bg-gray-200'
+                : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
+              >Home</a
+            >
           </li>
-          <li class="pr-10 text-2xl drop-shadow-lg">
-            <a href="/">Het Spiegespel</a>
+          <li class="pr-1">
+            <a
+              href="/concept"
+              class="{$currentPath === '/concept'
+                ? 'bg-gray-100 hover:bg-gray-200'
+                : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
+              >Spiegelconcept</a
+            >
           </li>
-          <li class="pr-10 text-2xl drop-shadow-lg"><a href="/">Contact</a></li>
+          <li class="pr-1">
+            <a
+              href="/services"
+              class="{$currentPath === '/services'
+                ? 'bg-gray-100 hover:bg-gray-200'
+                : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
+              >Dienstverlening</a
+            >
+          </li>
+          <li>
+            <a
+              href="/contact"
+              class="{$currentPath === '/contact'
+                ? 'bg-gray-100 hover:bg-gray-200'
+                : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
+              >Contact</a
+            >
+          </li>
         </ul>
+      </div>
+
+      <!-- Mobile -->
+      <div class="md:hidden flex items-center">
+        <button
+          on:click={() => openMenu.update((n) => !n)}
+          class="text-black"
+          aria-label="Button"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
       </div>
     </div>
   </nav>
+
+  {#if $openMenu}
+    <!-- svelte-ignore a11y_click_events_have_key_events -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div
+      class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-40 z-30 transition-opacity duration-500 ease-in-out"
+      on:click={handleBackDropClick}
+    ></div>
+  {/if}
+
+  <div
+    class="fixed top-0 right-0 h-full w-64 bg-white z-40 transform transition-transform duration-500 ease-in-out"
+    class:translate-x-0={$openMenu}
+    class:translate-x-full={!$openMenu}
+  >
+    <div class="flex justify-end p-4">
+      <button
+        on:click={() => openMenu.set(false)}
+        class="text-black"
+        aria-label="Button"
+      >
+      </button>
+    </div>
+
+    <ul
+      class="flex flex-col items-center pt-24 font-semibold text-lg space-y-3"
+    >
+      <li class="py-3">
+        <a
+          href="/"
+          class="{$currentPath === '/'
+            ? 'bg-gray-100 hover:bg-gray-200'
+            : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
+          >Home</a
+        >
+      </li>
+      <li class="py-3">
+        <a
+          href="/concept"
+          class="{$currentPath === '/concept'
+            ? 'bg-gray-100 hover:bg-gray-200'
+            : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
+          >Spiegelconcept</a
+        >
+      </li>
+      <li class="py-3">
+        <a
+          href="/services"
+          class="{$currentPath === '/services'
+            ? 'bg-gray-100 hover:bg-gray-200'
+            : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
+          >Dienstverlening</a
+        >
+      </li>
+      <li class="py-3">
+        <a
+          href="/contact"
+          class="{$currentPath === '/contact'
+            ? 'bg-gray-100 hover:bg-gray-200'
+            : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </div>
 </header>
 
 <main>
@@ -128,7 +282,9 @@
         <div class="justify-center items-center flex">Kwaliteit</div>
       </div>
     </div>
-    <div class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]">
+    <div
+      class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]"
+    >
       <div
         class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
@@ -148,7 +304,9 @@
         <div class="justify-center items-center flex">Samenwerken</div>
       </div>
     </div>
-    <div class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]">
+    <div
+      class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]"
+    >
       <div
         class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
@@ -168,7 +326,9 @@
         <div class="justify-center items-center flex">Teamontwikkeling</div>
       </div>
     </div>
-    <div class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]">
+    <div
+      class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]"
+    >
       <div
         class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
@@ -193,8 +353,14 @@
           Het spiegelspel
         </h2>
       </div>
-      <div class="flex justify-center items-center mt-[6rem] gap-[6rem] max-md:flex-col-reverse">
-        <img class="w-[30rem] h-auto max-sm:w-[25rem]" src="/denken.gif" alt="" />
+      <div
+        class="flex justify-center items-center mt-[6rem] gap-[6rem] max-md:flex-col-reverse"
+      >
+        <img
+          class="w-[30rem] h-auto max-sm:w-[25rem]"
+          src="/denken.gif"
+          alt=""
+        />
         <div
           class="w-[25rem] h-[46rem] rounded-xl bg-blue-400 p-3 text-white font-medium text-2xl drop-shadow-xl"
         >
@@ -210,7 +376,9 @@
           Spiegelspel biedt een interne audit en systeembeoordeling in één.
         </div>
       </div>
-      <div class="flex justify-center items-center mt-[6rem] gap-[10rem] max-md:flex-col">
+      <div
+        class="flex justify-center items-center mt-[6rem] gap-[10rem] max-md:flex-col"
+      >
         <div
           class="w-[25rem] h-[25rem] rounded-xl bg-blue-400 p-3 text-white font-medium text-2xl drop-shadow-xl"
         >
@@ -221,10 +389,20 @@
           waarbij alle teamleden actief deelnemen en bijdragen aan de
           teamontwikkeling.
         </div>
-        <img class="w-[25rem] h-auto max-sm:w-[20rem]" src="/bespreking.gif" alt="" />
+        <img
+          class="w-[25rem] h-auto max-sm:w-[20rem]"
+          src="/bespreking.gif"
+          alt=""
+        />
       </div>
-      <div class="flex justify-center items-center mt-[6rem] gap-[8rem] max-md:flex-col-reverse">
-        <img class="w-[25rem] h-auto max-md:mb-[6rem]" src="/selectie.gif" alt="" />
+      <div
+        class="flex justify-center items-center mt-[6rem] gap-[8rem] max-md:flex-col-reverse"
+      >
+        <img
+          class="w-[25rem] h-auto max-md:mb-[6rem]"
+          src="/selectie.gif"
+          alt=""
+        />
         <div
           class="w-[25rem] h-[26rem] rounded-xl bg-blue-400 p-3 text-white font-medium text-2xl drop-shadow-xl mb-[3rem]"
         >
@@ -248,7 +426,9 @@
           <div
             class="relative bg-white rounded-xl w-[50rem] h-[43rem] max-lg:w-[40rem] max-sm:w-[25rem] max-sm:h-[29rem]"
           >
-            <div class="w-[30rem] h-[40rem] float-right mr-[4rem] mt-[5rem] max-sm:w-[17rem] max-sm:mt-[2rem]">
+            <div
+              class="w-[30rem] h-[40rem] float-right mr-[4rem] mt-[5rem] max-sm:w-[17rem] max-sm:mt-[2rem]"
+            >
               <form on:submit={handleSubmit} class="space-y-6">
                 <div class="relative">
                   <input
