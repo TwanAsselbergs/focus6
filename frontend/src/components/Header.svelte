@@ -20,6 +20,15 @@
   const handleBackDropClick = () => {
     openMenu.set(false);
   };
+
+  let post = {};
+
+  onMount(async () => {
+    const res = await fetch(
+      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/19",
+    );
+    post = await res.json();
+  });
 </script>
 
 <header
@@ -29,14 +38,14 @@
 >
   <nav
     class="bg-white transition-all duration-500 p-4 {$scrolled
-      ? 'shadow-sm rounded-b-xl'
+      ? 'shadow-sm rounded-b-3xl'
       : 'shadow-none'}"
   >
     <div class="flex justify-between items-center">
       <div>
         <a href="/"
           ><img
-            src="/logo.jpeg"
+            src={post.logo}
             alt="Logo"
             class="{$scrolled
               ? 'w-32 md:w-36'

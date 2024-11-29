@@ -1,3 +1,16 @@
+<script>
+  import { onMount } from "svelte";
+
+  let post = {};
+
+  onMount(async () => {
+    const res = await fetch(
+      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/1",
+    );
+    post = await res.json();
+  });
+</script>
+
 <footer>
   <div
     class="mx-auto flex flex-col md:flex-row justify-between items-center bg-[#202528] p-12 md:p-36 md:mt-16 rounded-t-3xl text-center md:text-left"
@@ -12,9 +25,7 @@
           >
         </h3>
         <p class="text-gray-400 text-sm md:text-base leading-relaxed">
-          Bij Focus6 streven we ernaar om innovatieve oplossingen te bieden
-          waarmee bedrijven hun doelen kunnen bereiken. Onze focus ligt op
-          kwaliteit en klantgerichtheid.
+          {post.paragraph}
         </p>
         <a
           href="/services"
@@ -30,7 +41,7 @@
         </h3>
         <div class="flex flex-col space-y-4">
           <a
-            href="mailto:info@focus6.nl"
+            href="mailto:{post.email}"
             aria-label="Email"
             class="flex items-center justify-center md:justify-start space-x-2"
           >
@@ -50,11 +61,11 @@
             </svg>
             <span
               class="text-gray-400 text-sm md:text-lg font-semibold hover:underline"
-              >info@focus6.nl</span
+              >{post.email}</span
             >
           </a>
           <a
-            href="tel:+0621937222"
+            href="tel:{post.phone}"
             aria-label="Phone"
             class="flex items-center justify-center space-x-2"
           >
@@ -70,7 +81,7 @@
             </svg>
             <span
               class="text-gray-400 text-sm md:text-lg font-semibold hover:underline"
-              >06-21937222</span
+              >{post.phone}</span
             >
           </a>
         </div>
@@ -90,10 +101,10 @@
     class="flex justify-center items-center mx-auto bg-[#1C2122] p-10 md:gap-36"
   >
     <a href="/">
-      <img src="/logo.png" alt="Logo" class="w-24 h-auto hidden md:block" />
+      <img src={post.logo} alt="Logo" class="w-24 h-auto hidden md:block" />
     </a>
     <p class="text-gray-600 text-xs">
-      &copy; Copyright 2024. Alle rechten voorbehouden.
+      {post.copyright}
     </p>
   </div>
 </footer>
