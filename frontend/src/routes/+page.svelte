@@ -160,7 +160,7 @@
                   <img
                     src="/quotes.png"
                     alt="Quotes"
-                    class="absolute w-auto h-8 object-contain pb-2"
+                    class="absolute w-6 md:w-auto h-8 md:h-8 object-contain pb-2"
                   />
                   <h3
                     class="font-semibold text-2xl mb-4 mx-auto text-center text-[#185CE6]"
@@ -189,7 +189,7 @@
                   <img
                     src="/quotes.png"
                     alt="Quotes"
-                    class="absolute w-auto h-8 object-contain pb-2"
+                    class="absolute w-6 md:w-auto h-8 md:h-8 object-contain pb-2"
                   />
                   <h3
                     class="font-semibold text-2xl mb-4 mx-auto text-center text-[#185CE6]"
@@ -214,7 +214,7 @@
                   <img
                     src="/quotes.png"
                     alt="Quotes"
-                    class="absolute w-auto h-8 object-contain pb-2"
+                    class="absolute w-6 md:w-auto h-8 md:h-8 object-contain pb-2"
                   />
                   <h3
                     class="font-semibold text-2xl mb-4 mx-auto text-center text-[#185CE6]"
