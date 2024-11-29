@@ -32,7 +32,7 @@
       <img
         src={post.img_header}
         alt="Header"
-        class="w-full h-[40rem] md:h-auto object-cover rounded-b-3xl md:rounded-r-full"
+        class="w-full h-[40rem] md:h-screen object-cover rounded-b-3xl md:rounded-r-full"
       />
       <div
         class="absolute inset-0 rounded-3xl text-white pl-4 pt-16 md:pt-48 md:pl-48"
@@ -41,14 +41,14 @@
           class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
         >
           <h2
-            class="text-4xl md:text-7xl font-semibold pb-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)] text-center md:text-left"
+            class="text-4xl md:text-7xl font-semibold pb-6 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)] text-center md:text-left"
           >
             Welkom bij Focu<span class="text-[#F00F22]">s</span><span
               class="text-[#185CE6]">6</span
             >!
           </h2>
           <p
-            class="w-11/12 md:w-3/4 text-center md:text-left text-lg pt-4 pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)]"
+            class="w-11/12 md:w-3/4 text-center md:text-left text-lg pt-4 pb-10 pl-2 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)]"
           >
             {post.header_paragraph}
           </p>
@@ -91,7 +91,7 @@
       <img
         src={post.img_paragraph_1}
         alt="Img"
-        class="rounded-3xl shadow-xl w-4/5 md:w-1/4 mt-4 md:mt-0"
+        class="rounded-3xl shadow-xl w-4/5 h-52 md:h-72 object-cover md:w-1/4 mt-4 md:mt-0"
       />
     </div>
     <div
