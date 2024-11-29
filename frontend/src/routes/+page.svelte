@@ -20,7 +20,7 @@
 
     setInterval(() => {
       currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
-    }, 1000);
+    }, 5000);
   });
 </script>
 
@@ -30,7 +30,7 @@
   <section class="mb-8 md:mb-16 relative">
     <div class="relative w-full mx-auto">
       <img
-        src="/header.jpeg"
+        src={post.img_header}
         alt="Header"
         class="w-full h-[40rem] md:h-auto object-cover rounded-b-3xl md:rounded-r-full"
       />
@@ -62,7 +62,7 @@
     </div>
   </section>
 
-  <hr class="w-1/4 flex justify-center items-center mx-auto pb-12 md:pb-28" />
+  <hr class="w-1/4 flex justify-center items-center mx-auto pb-12 md:pb-32" />
 
   <section>
     <div class="flex flex-col md:flex-row justify-center items-center">
@@ -89,7 +89,7 @@
         </p>
       </div>
       <img
-        src="/img-1.jpg"
+        src={post.img_paragraph_1}
         alt="Img"
         class="rounded-3xl shadow-xl w-4/5 md:w-1/4 mt-4 md:mt-0"
       />
@@ -99,7 +99,7 @@
     >
       <a
         href="/concept"
-        class="relative bg-[#185CE6] w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-[101%]"
+        class="relative bg-[#185CE6] w-4/5 md:w-1/3 h-52 md:h-72 scale-[101%] md:scale-100 rounded-3xl md:mr-12 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-[101%]"
       >
         <h2 class="p-6 md:pt-8 text-white font-semibold text-2xl">
           Spiegelconcept
@@ -138,21 +138,97 @@
         </p>
       </div>
     </div>
-    <div class="mt-16 mb-16 md:mt-0 md:mb-48">
+    <div class="mb-16 md:mb-32">
       <div
-        class="w-11/12 md:w-[78%] mx-auto h-48 md:h-96 bg-gray-100 flex items-center flex-col rounded-3xl"
+        class="w-10/12 mx-auto h-auto md:h-[29rem] bg-white flex items-center flex-col rounded-3xl"
       >
-        <h2 class="text-gray-800 text-2xl md:text-4xl font-bold mt-12 mb-6">
+        <h2 class="text-gray-800 text-2xl md:text-4xl font-bold mb-12 md:mb-24">
           Recensies
         </h2>
         {#if reviews.length > 0}
-          <div class="flex flex-col justify-center items-center w-1/2">
-            <h3 class="font-semibold text-2xl mb-4 text-center">
-              {reviews[currentReviewIndex].title.rendered}
-            </h3>
-            <p class="text-center">
-              {@html reviews[currentReviewIndex].content.rendered}
-            </p>
+          <div
+            class="relative flex flex-col md:flex-row items-center justify-center w-full space-y-4 md:space-y-0"
+          >
+            <!-- Previous Review -->
+            <div
+              class="opacity-75 transform transition-all duration-700 w-full md:w-4/12 h-auto px-4 md:px-0"
+            >
+              <div
+                class="bg-white border-2 border-bg-gray-100 rounded-3xl py-4 md:py-6 px-5 md:px-12 h-36 md:h-52 overflow-hidden"
+              >
+                <div class="relative flex flex-row">
+                  <img
+                    src="/quotes.png"
+                    alt="Quotes"
+                    class="absolute w-auto h-8 object-contain pb-2"
+                  />
+                  <h3
+                    class="font-semibold text-2xl mb-4 mx-auto text-center text-[#185CE6]"
+                  >
+                    {reviews[
+                      (currentReviewIndex - 1 + reviews.length) % reviews.length
+                    ].title.rendered}
+                  </h3>
+                </div>
+                <p class="text-center">
+                  {@html reviews[
+                    (currentReviewIndex - 1 + reviews.length) % reviews.length
+                  ].content.rendered}
+                </p>
+              </div>
+            </div>
+
+            <!-- Current Review -->
+            <div
+              class="transform transition-all duration-700 w-full md:w-5/12 h-auto px-4 md:px-9"
+            >
+              <div
+                class="bg-white border-2 border-gray-300 scale-[102%] md:scale-[108%] rounded-3xl py-4 md:py-6 px-5 md:px-12 h-44 md:h-52 overflow-y-auto"
+              >
+                <div class="relative flex flex-row">
+                  <img
+                    src="/quotes.png"
+                    alt="Quotes"
+                    class="absolute w-auto h-8 object-contain pb-2"
+                  />
+                  <h3
+                    class="font-semibold text-2xl mb-4 mx-auto text-center text-[#185CE6]"
+                  >
+                    {reviews[currentReviewIndex].title.rendered}
+                  </h3>
+                </div>
+                <p class="text-center">
+                  {@html reviews[currentReviewIndex].content.rendered}
+                </p>
+              </div>
+            </div>
+
+            <!-- Upcoming Review -->
+            <div
+              class="opacity-75 transform transition-all duration-700 w-full md:w-4/12 h-auto px-4 md:px-0"
+            >
+              <div
+                class="bg-white border-2 border-bg-gray-100 rounded-3xl py-4 md:py-6 px-5 md:px-12 h-36 md:h-52 overflow-hidden"
+              >
+                <div class="relative flex flex-row">
+                  <img
+                    src="/quotes.png"
+                    alt="Quotes"
+                    class="absolute w-auto h-8 object-contain pb-2"
+                  />
+                  <h3
+                    class="font-semibold text-2xl mb-4 mx-auto text-center text-[#185CE6]"
+                  >
+                    {reviews[(currentReviewIndex + 1) % reviews.length].title
+                      .rendered}
+                  </h3>
+                </div>
+                <p class="text-center">
+                  {@html reviews[(currentReviewIndex + 1) % reviews.length]
+                    .content.rendered}
+                </p>
+              </div>
+            </div>
           </div>
         {/if}
       </div>
