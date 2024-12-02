@@ -20,7 +20,7 @@
 
     setInterval(() => {
       currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
-    }, 5000);
+    }, 10000);
   });
 </script>
 
