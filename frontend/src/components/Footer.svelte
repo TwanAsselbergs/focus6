@@ -1,7 +1,13 @@
 <script>
   import { onMount } from "svelte";
+  import { writable } from "svelte/store";
 
   let post = {};
+  const currentPath = writable();
+
+  onMount(() => {
+    currentPath.set(window.location.pathname);
+  });
 
   onMount(async () => {
     const res = await fetch(
@@ -89,10 +95,29 @@
       <div>
         <h3 class="text-white text-lg md:text-xl font-bold mb-4">Navigatie</h3>
         <nav class="flex flex-col space-y-4 text-gray-400 font-semibold">
-          <a href="/" class="underline">Home</a>
-          <a href="/concept" class="hover:underline">Spiegelconcept</a>
-          <a href="/services" class="hover:underline">Dienstverlening</a>
-          <a href="/contact" class="hover:underline">Contact</a>
+          <a
+            href="/"
+            class={$currentPath === "/" ? "underline " : "hover:underline"}
+            >Home</a
+          >
+          <a
+            href="/concept"
+            class={$currentPath === "/concept"
+              ? "underline"
+              : "hover:underline"}>Spiegelconcept</a
+          >
+          <a
+            href="/services"
+            class={$currentPath === "/services"
+              ? "underline"
+              : "hover:underline"}>Dienstverlening</a
+          >
+          <a
+            href="/contact"
+            class={$currentPath === "/contact"
+              ? "underline"
+              : "hover:underline"}>Contact</a
+          >
         </nav>
       </div>
     </div>
