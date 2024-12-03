@@ -25,7 +25,7 @@
 
   onMount(async () => {
     const res = await fetch(
-      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/19",
+      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/19",
     );
     post = await res.json();
   });
@@ -43,7 +43,7 @@
   >
     <div class="flex justify-between items-center">
       <div>
-        <a href="/"
+        <a href="/focus6/"
           ><img
             src={post.logo}
             alt="Logo"
@@ -57,8 +57,8 @@
         <ul class="flex font-semibold text-lg items-center">
           <li class="pr-1">
             <a
-              href="/"
-              class="{$currentPath === '/'
+              href="/focus6/"
+              class="{$currentPath === '/focus6/'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Home</a
@@ -66,8 +66,8 @@
           </li>
           <li class="pr-1">
             <a
-              href="/concept"
-              class="{$currentPath === '/concept'
+              href="/focus6/concept.html"
+              class="{$currentPath === '/focus6/concept.html'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Spiegelconcept</a
@@ -75,8 +75,8 @@
           </li>
           <li class="pr-1">
             <a
-              href="/services"
-              class="{$currentPath === '/services'
+              href="/focus6/services.html"
+              class="{$currentPath === '/focus6/services.html'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Dienstverlening</a
@@ -84,8 +84,8 @@
           </li>
           <li>
             <a
-              href="/contact"
-              class="{$currentPath === '/contact'
+              href="/focus6/contact.html"
+              class="{$currentPath === '/focus6/contact.html'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Contact</a
@@ -148,8 +148,8 @@
     >
       <li class="py-3">
         <a
-          href="/"
-          class="{$currentPath === '/'
+          href="/focus6/"
+          class="{$currentPath === '/focus6/'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Home</a
@@ -157,8 +157,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/concept"
-          class="{$currentPath === '/concept'
+          href="/focus6/concept.html"
+          class="{$currentPath === '/focus6/concept.html'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Spiegelconcept</a
@@ -166,8 +166,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/services"
-          class="{$currentPath === '/services'
+          href="/focus6/services.html"
+          class="{$currentPath === '/focus6/services.html'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Dienstverlening</a
@@ -175,8 +175,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/contact"
-          class="{$currentPath === '/contact'
+          href="/focus6/contact.html"
+          class="{$currentPath === '/focus6/contact.html'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Contact</a

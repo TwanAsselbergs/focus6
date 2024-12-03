@@ -45,9 +45,9 @@
   >
     <div class="flex justify-between items-center">
       <div>
-        <a href="/"
+        <a href="/focus6/"
           ><img
-            src="/logo-spiegelspel.png"
+            src="logo-spiegelspel.png"
             alt="Logo"
             class="{$scrolled
               ? 'w-44 md:w-56'
@@ -59,8 +59,8 @@
         <ul class="flex font-semibold text-lg items-center">
           <li class="pr-1">
             <a
-              href="/"
-              class="{$currentPath === '/'
+              href="/focus6/"
+              class="{$currentPath === '/focus6/'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Home</a
@@ -68,8 +68,8 @@
           </li>
           <li class="pr-1">
             <a
-              href="/concept"
-              class="{$currentPath === '/concept'
+              href="/focus6/concept"
+              class="{$currentPath === '/focus6/concept'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Spiegelconcept</a
@@ -77,8 +77,8 @@
           </li>
           <li class="pr-1">
             <a
-              href="/services"
-              class="{$currentPath === '/services'
+              href="/focus6/services"
+              class="{$currentPath === '/focus6/services'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Dienstverlening</a
@@ -86,8 +86,8 @@
           </li>
           <li>
             <a
-              href="/contact"
-              class="{$currentPath === '/contact'
+              href="/focus6/contact"
+              class="{$currentPath === '/focus6/contact'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Contact</a
@@ -150,8 +150,8 @@
     >
       <li class="py-3">
         <a
-          href="/"
-          class="{$currentPath === '/'
+          href="/focus6/"
+          class="{$currentPath === '/focus6'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Home</a
@@ -159,8 +159,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/concept"
-          class="{$currentPath === '/concept'
+          href="/focus6/concept"
+          class="{$currentPath === '/focus6/concept'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Spiegelconcept</a
@@ -168,8 +168,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/services"
-          class="{$currentPath === '/services'
+          href="/focus6/services"
+          class="{$currentPath === '/focus6/services'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Dienstverlening</a
@@ -177,8 +177,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/contact"
-          class="{$currentPath === '/contact'
+          href="/focus6/contact"
+          class="{$currentPath === '/focus6/contact'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Contact</a
@@ -189,7 +189,11 @@
 </header>
 
 <main>
-  <img class="mt-[5rem] h-screen max-lg:bg-left" src="/spiegelspel-main.png" alt="" />
+  <img
+    class="mt-[5rem] h-screen max-lg:bg-left"
+    src="/spiegelspel-main.png"
+    alt=""
+  />
   <div class="bg-blue-50 w-full h-[100rem] max-md:h-[130rem] max-sm:h-[90rem]">
     <div class="flex items-center justify-center">
       <h2
@@ -267,13 +271,31 @@
     >
       <div
         class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
-      ><img class="bg-contain w-full rounded-xl h-full" src="/kwaliteit.jpg" alt=""></div>
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/kwaliteit.jpg"
+          alt=""
+        />
+      </div>
       <div
         class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
-      ><img class="bg-contain w-full rounded-xl h-full" src="/samenwerken.jpg" alt=""></div>
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/samenwerken.jpg"
+          alt=""
+        />
+      </div>
       <div
         class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
-      ><img class="bg-contain w-full rounded-xl h-full" src="/teamontwikkeling.jpg" alt=""></div>
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/teamontwikkeling.jpg"
+          alt=""
+        />
+      </div>
     </div>
     <div class="flex justify-center items-center">
       <div
@@ -295,7 +317,13 @@
     <div class="flex justify-center items-center gap-[20rem]">
       <div
         class="w-[28rem] h-[19rem] bg-gray-200 max-[10570px]:hidden rounded-xl max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
-      ><img class="bg-contain w-full rounded-xl h-full" src="/kwaliteit.jpg" alt=""></div>
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/kwaliteit.jpg"
+          alt=""
+        />
+      </div>
     </div>
     <div class="flex justify-center items-center">
       <div
@@ -317,7 +345,13 @@
     <div class="flex justify-center items-center gap-[20rem]">
       <div
         class="w-[28rem] h-[19rem] bg-gray-200 rounded-xl max-md:block max-[10570px]:hidden max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
-      ><img class="bg-contain w-full rounded-xl h-full" src="/samenwerken.jpg" alt=""></div>
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/samenwerken.jpg"
+          alt=""
+        />
+      </div>
     </div>
     <div class="flex justify-center items-center">
       <div
@@ -339,7 +373,13 @@
     <div class="flex justify-center items-center gap-[20rem]">
       <div
         class="w-[28rem] h-[19rem] bg-gray-200 rounded-xl max-md:block max-[10570px]:hidden max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
-      ><img class="bg-contain w-full rounded-xl h-full" src="/teamontwikkeling.jpg" alt=""></div>
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/teamontwikkeling.jpg"
+          alt=""
+        />
+      </div>
     </div>
 
     <div class="flex justify-center items-center mt-[10rem]">
@@ -414,11 +454,6 @@
           opstellen van een effectief teamplan.
         </div>
       </div>
-      
-                
-            
-        
-          
-        
-
+    </div>
+  </div>
 </main>
