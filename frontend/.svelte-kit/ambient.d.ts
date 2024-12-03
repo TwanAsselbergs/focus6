@@ -26,7 +26,6 @@
  * ```
  */
 declare module '$env/static/private' {
-	export const MANPATH: string;
 	export const TERM_PROGRAM: string;
 	export const NODE: string;
 	export const INIT_CWD: string;
@@ -42,16 +41,21 @@ declare module '$env/static/private' {
 	export const COLOR: string;
 	export const npm_config_noproxy: string;
 	export const npm_config_local_prefix: string;
+	export const ZSH: string;
 	export const USER: string;
+	export const LS_COLORS: string;
 	export const COMMAND_MODE: string;
 	export const npm_config_globalconfig: string;
 	export const SSH_AUTH_SOCK: string;
 	export const __CF_USER_TEXT_ENCODING: string;
 	export const npm_execpath: string;
+	export const PAGER: string;
+	export const LSCOLORS: string;
 	export const PATH: string;
 	export const npm_package_json: string;
 	export const npm_config_engine_strict: string;
 	export const _: string;
+	export const LaunchInstanceID: string;
 	export const npm_config_userconfig: string;
 	export const npm_config_init_module: string;
 	export const USER_ZDOTDIR: string;
@@ -74,6 +78,7 @@ declare module '$env/static/private' {
 	export const VSCODE_GIT_ASKPASS_MAIN: string;
 	export const HOMEBREW_PREFIX: string;
 	export const npm_config_cache: string;
+	export const LESS: string;
 	export const LOGNAME: string;
 	export const npm_lifecycle_script: string;
 	export const VSCODE_GIT_IPC_HANDLE: string;
@@ -82,6 +87,7 @@ declare module '$env/static/private' {
 	export const GIT_ASKPASS: string;
 	export const INFOPATH: string;
 	export const HOMEBREW_CELLAR: string;
+	export const SECURITYSESSIONID: string;
 	export const npm_node_execpath: string;
 	export const npm_config_prefix: string;
 	export const COLORTERM: string;
@@ -117,7 +123,6 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		MANPATH: string;
 		TERM_PROGRAM: string;
 		NODE: string;
 		INIT_CWD: string;
@@ -133,16 +138,21 @@ declare module '$env/dynamic/private' {
 		COLOR: string;
 		npm_config_noproxy: string;
 		npm_config_local_prefix: string;
+		ZSH: string;
 		USER: string;
+		LS_COLORS: string;
 		COMMAND_MODE: string;
 		npm_config_globalconfig: string;
 		SSH_AUTH_SOCK: string;
 		__CF_USER_TEXT_ENCODING: string;
 		npm_execpath: string;
+		PAGER: string;
+		LSCOLORS: string;
 		PATH: string;
 		npm_package_json: string;
 		npm_config_engine_strict: string;
 		_: string;
+		LaunchInstanceID: string;
 		npm_config_userconfig: string;
 		npm_config_init_module: string;
 		USER_ZDOTDIR: string;
@@ -165,6 +175,7 @@ declare module '$env/dynamic/private' {
 		VSCODE_GIT_ASKPASS_MAIN: string;
 		HOMEBREW_PREFIX: string;
 		npm_config_cache: string;
+		LESS: string;
 		LOGNAME: string;
 		npm_lifecycle_script: string;
 		VSCODE_GIT_IPC_HANDLE: string;
@@ -173,6 +184,7 @@ declare module '$env/dynamic/private' {
 		GIT_ASKPASS: string;
 		INFOPATH: string;
 		HOMEBREW_CELLAR: string;
+		SECURITYSESSIONID: string;
 		npm_node_execpath: string;
 		npm_config_prefix: string;
 		COLORTERM: string;
