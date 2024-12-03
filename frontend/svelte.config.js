@@ -9,6 +9,9 @@ const config = {
       fallback: null,
       strict: false,
     }),
+    paths: {
+      base: "/focus6",
+    },
   },
 };
 
