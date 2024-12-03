@@ -26,7 +26,7 @@
 
 <Header />
 
-<main class="pt-24">
+<main class="mt-24">
   <section class="mb-8 md:mb-16 relative">
     <div class="relative w-full mx-auto">
       <img
