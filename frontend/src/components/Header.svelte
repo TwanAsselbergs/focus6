@@ -5,6 +5,8 @@
   const scrolled = writable(false);
   const currentPath = writable();
   const openMenu = writable(false);
+  let post = {};
+  const CACHE_DURATION = 60 * 60 * 1000;
 
   onMount(() => {
     currentPath.set(window.location.pathname);
@@ -21,13 +23,25 @@
     openMenu.set(false);
   };
 
-  let post = {};
-
   onMount(async () => {
-    const res = await fetch(
-      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/19",
-    );
-    post = await res.json();
+    if (typeof localStorage !== "undefined") {
+      const cachedPost = JSON.parse(localStorage.getItem("headerPost")) || {};
+      const cachedTimestamp = localStorage.getItem("headerPostTimestamp");
+
+      const isCacheValid =
+        cachedTimestamp && Date.now() - cachedTimestamp < CACHE_DURATION;
+
+      if (isCacheValid && cachedPost.id) {
+        post = cachedPost;
+      } else {
+        const res = await fetch(
+          "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/19",
+        );
+        post = await res.json();
+        localStorage.setItem("headerPost", JSON.stringify(post));
+        localStorage.setItem("headerPostTimestamp", Date.now());
+      }
+    }
   });
 </script>
 

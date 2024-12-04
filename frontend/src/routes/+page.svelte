@@ -6,21 +6,40 @@
   let post = {};
   let reviews = [];
   let currentReviewIndex = 0;
+  const CACHE_DURATION = 60 * 60 * 1000;
 
   onMount(async () => {
-    const postRes = await fetch(
-      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/29",
-    );
-    post = await postRes.json();
+    if (typeof localStorage !== "undefined") {
+      const cachedPost = JSON.parse(localStorage.getItem("post")) || {};
+      const cachedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+      const cachedTimestamp = localStorage.getItem("postTimestamp");
 
-    const reviewsRes = await fetch(
-      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/site-review",
-    );
-    reviews = await reviewsRes.json();
+      const isCacheValid =
+        cachedTimestamp && Date.now() - cachedTimestamp < CACHE_DURATION;
 
-    setInterval(() => {
-      currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
-    }, 10000);
+      if (isCacheValid && cachedPost.id && cachedReviews.length) {
+        post = cachedPost;
+        reviews = cachedReviews;
+      } else {
+        const postRes = await fetch(
+          "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/29",
+        );
+        post = await postRes.json();
+        localStorage.setItem("post", JSON.stringify(post));
+
+        const reviewsRes = await fetch(
+          "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/site-review",
+        );
+        reviews = await reviewsRes.json();
+        localStorage.setItem("reviews", JSON.stringify(reviews));
+
+        localStorage.setItem("postTimestamp", Date.now());
+      }
+
+      setInterval(() => {
+        currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
+      }, 10000);
+    }
   });
 </script>
 

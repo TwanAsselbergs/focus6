@@ -4,12 +4,27 @@
   import Footer from "../../components/Footer.svelte";
 
   let post = {};
+  const CACHE_DURATION = 60 * 60 * 1000;
 
   onMount(async () => {
-    const res = await fetch(
-      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/41",
-    );
-    post = await res.json();
+    if (typeof localStorage !== "undefined") {
+      const cachedPost = JSON.parse(localStorage.getItem("servicesPost")) || {};
+      const cachedTimestamp = localStorage.getItem("servicesPostTimestamp");
+
+      const isCacheValid =
+        cachedTimestamp && Date.now() - cachedTimestamp < CACHE_DURATION;
+
+      if (isCacheValid && cachedPost.id) {
+        post = cachedPost;
+      } else {
+        const res = await fetch(
+          "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/41",
+        );
+        post = await res.json();
+        localStorage.setItem("servicesPost", JSON.stringify(post));
+        localStorage.setItem("servicesPostTimestamp", Date.now());
+      }
+    }
   });
 </script>
 

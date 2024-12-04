@@ -4,16 +4,31 @@
 
   let post = {};
   const currentPath = writable();
+  const CACHE_DURATION = 60 * 60 * 1000;
 
   onMount(() => {
     currentPath.set(window.location.pathname);
   });
 
   onMount(async () => {
-    const res = await fetch(
-      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/1",
-    );
-    post = await res.json();
+    if (typeof localStorage !== "undefined") {
+      const cachedPost = JSON.parse(localStorage.getItem("footerPost")) || {};
+      const cachedTimestamp = localStorage.getItem("footerPostTimestamp");
+
+      const isCacheValid =
+        cachedTimestamp && Date.now() - cachedTimestamp < CACHE_DURATION;
+
+      if (isCacheValid && cachedPost.id) {
+        post = cachedPost;
+      } else {
+        const res = await fetch(
+          "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/1",
+        );
+        post = await res.json();
+        localStorage.setItem("footerPost", JSON.stringify(post));
+        localStorage.setItem("footerPostTimestamp", Date.now());
+      }
+    }
   });
 </script>
 
