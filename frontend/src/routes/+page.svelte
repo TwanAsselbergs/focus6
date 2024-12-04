@@ -6,6 +6,7 @@
   let post = {};
   let reviews = [];
   let currentReviewIndex = 0;
+
   const CACHE_DURATION = 60 * 60 * 1000;
 
   onMount(async () => {

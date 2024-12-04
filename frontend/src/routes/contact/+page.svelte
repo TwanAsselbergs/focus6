@@ -5,6 +5,7 @@
   import Footer from "../../components/Footer.svelte";
 
   let post = {};
+
   const CACHE_DURATION = 60 * 60 * 1000;
 
   let formData = {
