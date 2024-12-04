@@ -135,14 +135,16 @@
     </div>
   </nav>
 
-  {#if $openMenu}
-    <!-- svelte-ignore a11y_click_events_have_key_events -->
-    <!-- svelte-ignore a11y_no_static_element_interactions -->
-    <div
-      class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-40 z-30 transition-opacity duration-500 ease-in-out"
-      on:click={handleBackDropClick}
-    ></div>
-  {/if}
+  <div
+    class="fixed top-0 left-0 right-0 bottom-0 bg-black z-30 transition-opacity duration-500 ease-in-out"
+    class:opacity-40={$openMenu}
+    class:opacity-0={!$openMenu}
+    class:pointer-events-none={!$openMenu}
+    on:click={handleBackDropClick}
+    role="button"
+    tabindex="0"
+    on:keydown={(e) => e.key === "Enter" && handleBackDropClick()}
+  ></div>
 
   <div
     class="fixed top-0 right-0 h-full w-64 bg-white z-40 transform transition-transform duration-500 ease-in-out"
