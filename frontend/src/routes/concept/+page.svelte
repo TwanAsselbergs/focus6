@@ -37,7 +37,7 @@
     class="bg-[#1C2122] py-24 md:py-40 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
   >
     <h1 class="text-4xl md:text-5xl font-bold text-white">Spiegelconcept</h1>
-    <p class="text-gray-400 font-semibold">Over het spiegelconcept</p>
+    <p class="text-gray-400 font-semibold">Over het Spiegelconcept</p>
   </div>
 
   <div
