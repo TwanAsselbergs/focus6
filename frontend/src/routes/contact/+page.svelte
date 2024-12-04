@@ -18,6 +18,12 @@
   const SERVICE_ID = "service_8j8xqta";
   const TEMPLATE_ID = "template_0bxy6d4";
 
+  let nameTouched = false;
+  let emailTouched = false;
+  let messageTouched = false;
+  let isSubmitting = false;
+  let submissionSuccess = false;
+
   onMount(async () => {
     if (typeof localStorage !== "undefined") {
       const cachedPost = JSON.parse(localStorage.getItem("contactPost")) || {};
@@ -41,15 +47,45 @@
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    nameTouched = true;
+    emailTouched = true;
+    messageTouched = true;
+
+    if (
+      !formData.name ||
+      !formData.email ||
+      !validateEmail(formData.email) ||
+      !formData.message
+    ) {
+      return;
+    }
+
+    isSubmitting = true;
+
     try {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID);
-      alert("Bericht succesvol verzonden.");
+      submissionSuccess = true;
       formData = { name: "", email: "", message: "" };
+      nameTouched = false;
+      emailTouched = false;
+      messageTouched = false;
     } catch (error) {
       alert("Er is iets misgegaan. Probeer het opnieuw.");
       console.error(error);
+    } finally {
+      isSubmitting = false;
     }
   };
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  $: nameInvalid = nameTouched && !formData.name;
+  $: emailInvalid =
+    emailTouched && (!formData.email || !validateEmail(formData.email));
+  $: messageInvalid = messageTouched && !formData.message;
 </script>
 
 <Header />
@@ -166,24 +202,29 @@
         <p class="text-lg text-gray-700 pb-8 text-center md:text-left">
           {post.paragraph_3}
         </p>
-        <form on:submit={handleSubmit} class="space-y-6">
+        <form on:submit={handleSubmit} class="space-y-6" novalidate>
           <div class="relative">
             <input
               type="text"
               id="name"
               bind:value={formData.name}
               placeholder=" "
-              required
-              class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent"
+              class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent {nameInvalid
+                ? 'ring-red-500 border-red-500 bg-red-50'
+                : ''}"
+              on:blur={() => (nameTouched = true)}
+              on:focus={() => (nameTouched = false)}
             />
             <label
               for="name"
               class="absolute left-4
-                transition-all duration-200 text-gray-400 text-md
+                transition-all duration-200 text-md
                 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
                 {formData.name
                 ? 'top-2 text-sm text-blue-500'
-                : 'top-[21px] text-gray-400 text-base'}"
+                : 'top-[21px] text-base'} {nameInvalid
+                ? 'text-red-500'
+                : 'text-gray-400'}"
             >
               Naam
             </label>
@@ -195,17 +236,22 @@
               id="email"
               bind:value={formData.email}
               placeholder=" "
-              required
-              class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent"
+              class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent {emailInvalid
+                ? 'ring-red-500 border-red-500 bg-red-50'
+                : ''}"
+              on:blur={() => (emailTouched = true)}
+              on:focus={() => (emailTouched = false)}
             />
             <label
               for="email"
               class="absolute left-4
-                transition-all duration-200 text-gray-400 text-md
+                transition-all duration-200 text-md
                 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
                 {formData.email
                 ? 'top-2 text-sm text-blue-500'
-                : 'top-[21px] text-gray-400 text-base'}"
+                : 'top-[21px] text-base'} {emailInvalid
+                ? 'text-red-500'
+                : 'text-gray-400'}"
             >
               E-mailadres
             </label>
@@ -217,17 +263,22 @@
               bind:value={formData.message}
               rows="5"
               placeholder=" "
-              required
-              class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent resize-none"
+              class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent resize-none {messageInvalid
+                ? 'ring-red-500 border-red-500 bg-red-50'
+                : ''}"
+              on:blur={() => (messageTouched = true)}
+              on:focus={() => (messageTouched = false)}
             ></textarea>
             <label
               for="message"
               class="absolute left-4
-                transition-all duration-200 text-gray-400 text-md
+                transition-all duration-200 text-md
                 peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
                 {formData.message
                 ? 'top-2 text-sm text-blue-500'
-                : 'top-[21px] text-gray-400 text-base'}"
+                : 'top-[21px] text-base'} {messageInvalid
+                ? 'text-red-500'
+                : 'text-gray-400'}"
             >
               Bericht
             </label>
@@ -237,8 +288,16 @@
             <button
               type="submit"
               class="w-full bg-[#185CE6] hover:bg-[#2B67E8] text-white py-3 px-6 rounded-lg font-semibold transition-all"
-              >Verzenden</button
+              disabled={isSubmitting}
             >
+              {#if isSubmitting}
+                Verzonden!
+              {:else if submissionSuccess}
+                Verzenden
+              {:else}
+                Verzenden
+              {/if}
+            </button>
           </div>
         </form>
       </div>
