@@ -1,29 +1,16 @@
 <script>
   import { onMount } from "svelte";
-  import { writable } from "svelte/store";
   import Header from "../../components/Header.svelte";
   import Footer from "../../components/Footer.svelte";
 
-  const scrolled = writable(false);
-  const currentPath = writable();
   let post = {};
+
   const CACHE_DURATION = 60 * 60 * 1000;
-
-  onMount(() => {
-    currentPath.set(window.location.pathname);
-
-    const handleScroll = () => {
-      scrolled.set(window.scrollY > 75);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  });
 
   onMount(async () => {
     if (typeof localStorage !== "undefined") {
-      const cachedPost = JSON.parse(localStorage.getItem("headerPost")) || {};
-      const cachedTimestamp = localStorage.getItem("headerPostTimestamp");
+      const cachedPost = JSON.parse(localStorage.getItem("conceptPost")) || {};
+      const cachedTimestamp = localStorage.getItem("conceptPostTimestamp");
 
       const isCacheValid =
         cachedTimestamp && Date.now() - cachedTimestamp < CACHE_DURATION;
@@ -32,17 +19,18 @@
         post = cachedPost;
       } else {
         const res = await fetch(
-          "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/19",
+          "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/32",
         );
         post = await res.json();
-        localStorage.setItem("headerPost", JSON.stringify(post));
-        localStorage.setItem("headerPostTimestamp", Date.now());
+        localStorage.setItem("conceptPost", JSON.stringify(post));
+        localStorage.setItem("conceptPostTimestamp", Date.now());
       }
     }
   });
 </script>
 
 <Header />
+
 <main class="mt-24">
   <!-- Header -->
   <div
