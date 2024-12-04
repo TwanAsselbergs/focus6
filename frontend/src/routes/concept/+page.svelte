@@ -41,7 +41,7 @@
   </div>
 
   <div
-    class="pt-16 md:pt-24 pb-16 md:pb-16 flex justify-center items-center flex-col text-center"
+    class="pt-16 md:pt-24 pb-10 md:pb-16 flex justify-center items-center flex-col text-center"
   >
     <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
       Het Spiegelconcept
@@ -75,11 +75,11 @@
       <img
         src={post.img_concept}
         alt="Concept"
-        class="rounded-3xl w-2/5 md:w-1/4 mt-10 md:mt-0 transition-transform duration-500 ease-in-out hover:scale-110"
+        class="rounded-3xl w-2/5 md:w-1/4 mt-10 mb-6 md:mt-0 md:mb-0 transition-transform duration-500 ease-in-out hover:scale-110"
       />
     </div>
     <div
-      class="flex flex-col-reverse md:flex-row items-center md:justify-center my-12 md:my-48"
+      class="flex flex-col-reverse md:flex-row items-center md:justify-center my-4 md:my-48"
     >
       <!-- Image Container with Animation -->
       <div
@@ -88,7 +88,7 @@
         <img
           src={post.img_samen_sturen}
           alt="Samen Sturen"
-          class="w-auto mt-10 mx-auto my-auto h-48 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-110"
+          class="w-40 md:w-72 mt-10 mx-auto my-auto h-40 md:h-72 rounded-3xl md:mr-12 transition-transform duration-500 ease-in-out hover:scale-110"
         />
       </div>
 
@@ -110,7 +110,7 @@
   <div
     class="w-10/12 md:w-[78%] mx-auto bg-gray-100 flex justify-center items-center rounded-3xl mb-12 md:mb-24"
   >
-    <h2 class="text-gray-800 text-4xl md:text-5xl font-bold py-16 md:py-24">
+    <h2 class="text-gray-800 text-3xl md:text-5xl font-bold py-10 md:py-24">
       Aanpak
     </h2>
   </div>
@@ -175,7 +175,7 @@
     <div
       class="w-10/12 md:w-[78%] mx-auto bg-gray-100 flex justify-center items-center rounded-3xl mt-20 mb-12 md:my-24"
     >
-      <h2 class="text-gray-800 text-4xl md:text-5xl font-bold py-16 md:py-24">
+      <h2 class="text-gray-800 text-3xl md:text-5xl font-bold py-10 md:py-24">
         Implementatie
       </h2>
     </div>
@@ -203,7 +203,7 @@
     </div>
 
     <div
-      class="flex flex-col-reverse md:flex-row justify-center items-center my-4 md:my-32"
+      class="flex flex-col-reverse md:flex-row justify-center items-center my-4 md:my-32 md:ml-32 md:gap-24"
     >
       <img
         src={post.img_teamplan_cyclus}

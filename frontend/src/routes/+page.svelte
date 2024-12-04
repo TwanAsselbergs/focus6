@@ -55,7 +55,7 @@
         class="w-full h-[40rem] md:h-screen object-cover rounded-b-3xl md:rounded-r-full"
       />
       <div
-        class="absolute inset-0 rounded-3xl text-white pl-4 pt-16 md:pt-48 md:pl-48"
+        class="absolute inset-0 rounded-3xl text-white pt-16 md:pt-48 md:pl-48"
       >
         <div
           class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
@@ -73,7 +73,7 @@
             class="hidden xl:block absolute w-24 h-auto left-[47.40rem] top-[8.64rem] scale-x-[-1]"
           />
           <p
-            class="w-11/12 md:w-3/4 text-center md:text-left text-lg pt-4 pb-10 pl-2 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)]"
+            class="w-11/12 md:w-3/4 text-center md:text-left text-lg pt-4 pb-10 md:pl-1.5 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)]"
           >
             {post.header_paragraph}
           </p>

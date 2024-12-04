@@ -37,7 +37,7 @@
     class="bg-[#1C2122] py-24 md:py-40 h-72 md:h-auto rounded-b-3xl md:rounded-r-full text-center"
   >
     <h1 class="text-4xl md:text-5xl font-bold text-white">Dienstverlening</h1>
-    <p class="text-gray-400 font-semibold">Onze diensten</p>
+    <p class="text-gray-400 font-semibold">Over onze diensten</p>
   </div>
 
   <!-- Grid -->
@@ -45,7 +45,7 @@
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-24 px-6 md:px-24 my-16 md:my-24"
   >
     <!-- Teamkompas -->
-    <div class="p-4 rounded-3xl">
+    <div class="p-4 rounded-3xl mb-6 md:mb-0">
       <img
         src={post.img_teamkompas}
         class="w-40 h-40 object-contain mx-auto"
@@ -60,7 +60,7 @@
     </div>
 
     <!-- Zelfevaluatie -->
-    <div class="p-4 rounded-3xl">
+    <div class="p-4 rounded-3xl mb-6 md:mb-0">
       <img
         src={post.img_zelfevaluatie}
         class="w-40 h-40 object-contain mx-auto"
@@ -75,7 +75,7 @@
     </div>
 
     <!-- Prestatiesturing -->
-    <div class="p-4 rounded-3xl">
+    <div class="p-4 rounded-3xl mb-6 md:mb-0">
       <img
         src={post.img_prestatiesturing}
         class="w-40 h-40 object-contain mx-auto"
@@ -105,7 +105,7 @@
     </div>
 
     <!-- Omgevingsanalyse -->
-    <div class="p-4 rounded-3xl">
+    <div class="p-4 rounded-3xl mb-6 md:mb-0">
       <img
         src={post.img_omgevingsanalyse}
         class="w-40 h-40 object-contain mx-auto"
@@ -120,7 +120,7 @@
     </div>
 
     <!-- Stakeholdersanalyse -->
-    <div class="p-4 rounded-3xl">
+    <div class="p-4 rounded-3xl mb-6 md:mb-0">
       <img
         src={post.img_stakeholders}
         class="w-40 h-40 object-contain mx-auto"
@@ -135,7 +135,7 @@
     </div>
 
     <!-- Processen -->
-    <div class="p-4 rounded-3xl">
+    <div class="p-4 rounded-3xl mb-6 md:mb-0">
       <img
         src={post.img_processen}
         class="w-40 h-40 object-contain mx-auto"
@@ -150,7 +150,7 @@
     </div>
 
     <!-- Projectmanagament -->
-    <div class="p-4 rounded-3xl">
+    <div class="p-4 rounded-3xl mb-6 md:mb-0">
       <img
         src={post.img_management}
         class="w-40 h-40 object-contain mx-auto"
