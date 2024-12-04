@@ -2,10 +2,11 @@
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
 
+  let post = {};
+
   const scrolled = writable(false);
   const currentPath = writable();
   const openMenu = writable(false);
-  let post = {};
   const CACHE_DURATION = 60 * 60 * 1000;
 
   onMount(() => {
