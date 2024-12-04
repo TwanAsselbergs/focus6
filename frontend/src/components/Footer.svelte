@@ -3,6 +3,7 @@
   import { writable } from "svelte/store";
 
   let post = {};
+
   const currentPath = writable();
   const CACHE_DURATION = 60 * 60 * 1000;
 
