@@ -45,9 +45,9 @@
   >
     <div class="flex justify-between items-center">
       <div>
-        <a href="/"
+        <a href="/focus6/"
           ><img
-            src="/logo-spiegelspel.png"
+            src="logo-spiegelspel.png"
             alt="Logo"
             class="{$scrolled
               ? 'w-44 md:w-56'
@@ -59,8 +59,8 @@
         <ul class="flex font-semibold text-lg items-center">
           <li class="pr-1">
             <a
-              href="/"
-              class="{$currentPath === '/'
+              href="/focus6/"
+              class="{$currentPath === '/focus6/'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Home</a
@@ -68,8 +68,8 @@
           </li>
           <li class="pr-1">
             <a
-              href="/concept"
-              class="{$currentPath === '/concept'
+              href="/focus6/concept"
+              class="{$currentPath === '/focus6/concept'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Spiegelconcept</a
@@ -77,8 +77,8 @@
           </li>
           <li class="pr-1">
             <a
-              href="/services"
-              class="{$currentPath === '/services'
+              href="/focus6/services"
+              class="{$currentPath === '/focus6/services'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Dienstverlening</a
@@ -86,8 +86,8 @@
           </li>
           <li>
             <a
-              href="/contact"
-              class="{$currentPath === '/contact'
+              href="/focus6/contact"
+              class="{$currentPath === '/focus6/contact'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
               >Contact</a
@@ -150,8 +150,8 @@
     >
       <li class="py-3">
         <a
-          href="/"
-          class="{$currentPath === '/'
+          href="/focus6/"
+          class="{$currentPath === '/focus6'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Home</a
@@ -159,8 +159,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/concept"
-          class="{$currentPath === '/concept'
+          href="/focus6/concept"
+          class="{$currentPath === '/focus6/concept'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Spiegelconcept</a
@@ -168,8 +168,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/services"
-          class="{$currentPath === '/services'
+          href="/focus6/services"
+          class="{$currentPath === '/focus6/services'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Dienstverlening</a
@@ -177,8 +177,8 @@
       </li>
       <li class="py-3">
         <a
-          href="/contact"
-          class="{$currentPath === '/contact'
+          href="/focus6/contact"
+          class="{$currentPath === '/focus6/contact'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Contact</a
@@ -189,7 +189,11 @@
 </header>
 
 <main>
-  <img src="/spiegelspel-main.png" alt="" />
+  <img
+    class="mt-[5rem] h-screen max-lg:bg-left"
+    src="/spiegelspel-main.png"
+    alt=""
+  />
   <div class="bg-blue-50 w-full h-[100rem] max-md:h-[130rem] max-sm:h-[90rem]">
     <div class="flex items-center justify-center">
       <h2
@@ -266,18 +270,36 @@
       class="flex justify-center items-center gap-[11rem] max-xl:gap-[6rem] max-lg:gap-[2rem] max-md:hidden"
     >
       <div
-        class="w-[21rem] h-[18rem] bg-white rounded-xl max-lg:w-[18rem]"
-      ></div>
+        class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/kwaliteit.jpg"
+          alt=""
+        />
+      </div>
       <div
-        class="w-[21rem] h-[18rem] bg-white rounded-xl max-lg:w-[18rem]"
-      ></div>
+        class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/samenwerken.jpg"
+          alt=""
+        />
+      </div>
       <div
-        class="w-[21rem] h-[18rem] bg-white rounded-xl max-lg:w-[18rem]"
-      ></div>
+        class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/teamontwikkeling.jpg"
+          alt=""
+        />
+      </div>
     </div>
     <div class="flex justify-center items-center">
       <div
-        class="mt-[4rem] w-[30rem] h-[4rem] rounded-xl bg-orange-400 max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden text-white text-4xl font-bold max-sm:w-[25rem]"
+        class="mt-[4rem] w-[30rem] h-[4rem] max-[10570px]:hidden rounded-xl bg-orange-400 max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden text-white text-4xl font-bold max-sm:w-[25rem]"
       >
         <div class="justify-center items-center flex">Kwaliteit</div>
       </div>
@@ -286,20 +308,26 @@
       class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]"
     >
       <div
-        class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
+        class="w-[1rem] h-[2rem] bg-white max-[10570px]:hidden max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
       <div
-        class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
+        class="w-[1rem] h-[2rem] bg-white max-[10570px]:hidden max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
     </div>
     <div class="flex justify-center items-center gap-[20rem]">
       <div
-        class="w-[28rem] h-[23rem] bg-gray-200 rounded-xl max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
-      ></div>
+        class="w-[28rem] h-[19rem] bg-gray-200 max-[10570px]:hidden rounded-xl max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/kwaliteit.jpg"
+          alt=""
+        />
+      </div>
     </div>
     <div class="flex justify-center items-center">
       <div
-        class="mt-[4rem] w-[30rem] h-[4rem] rounded-xl bg-orange-400 max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden text-white text-4xl font-bold max-sm:w-[26rem]"
+        class="mt-[4rem] w-[30rem] h-[4rem] rounded-xl max-[10570px]:hidden bg-orange-400 max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden text-white text-4xl font-bold max-sm:w-[26rem]"
       >
         <div class="justify-center items-center flex">Samenwerken</div>
       </div>
@@ -308,20 +336,26 @@
       class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]"
     >
       <div
-        class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
+        class="w-[1rem] h-[2rem] bg-white max-md:block max-[10570px]:hidden max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
       <div
-        class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
+        class="w-[1rem] h-[2rem] bg-white max-md:block max-[10570px]:hidden max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
     </div>
     <div class="flex justify-center items-center gap-[20rem]">
       <div
-        class="w-[28rem] h-[23rem] bg-gray-200 rounded-xl max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
-      ></div>
+        class="w-[28rem] h-[19rem] bg-gray-200 rounded-xl max-md:block max-[10570px]:hidden max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/samenwerken.jpg"
+          alt=""
+        />
+      </div>
     </div>
     <div class="flex justify-center items-center">
       <div
-        class="mt-[4rem] w-[30rem] h-[4rem] rounded-xl bg-orange-400 max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden text-white text-4xl font-bold max-sm:w-[26rem]"
+        class="mt-[4rem] w-[30rem] h-[4rem] rounded-xl max-[10570px]:hidden bg-orange-400 max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden text-white text-4xl font-bold max-sm:w-[26rem]"
       >
         <div class="justify-center items-center flex">Teamontwikkeling</div>
       </div>
@@ -330,16 +364,22 @@
       class="flex justify-center items-center gap-[20rem] max-sm:gap-[12rem]"
     >
       <div
-        class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
+        class="w-[1rem] h-[2rem] bg-white max-md:block max-[10570px]:hidden max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
       <div
-        class="w-[1rem] h-[2rem] bg-white max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden"
+        class="w-[1rem] h-[2rem] bg-white max-md:block max-[10570px]:hidden max-2xl:hidden max-xl:hidden max-lg:hidden"
       ></div>
     </div>
     <div class="flex justify-center items-center gap-[20rem]">
       <div
-        class="w-[28rem] h-[23rem] bg-gray-200 rounded-xl max-md:block max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
-      ></div>
+        class="w-[28rem] h-[19rem] bg-gray-200 rounded-xl max-md:block max-[10570px]:hidden max-2xl:hidden max-xl:hidden max-lg:hidden max-sm:h-[18rem]"
+      >
+        <img
+          class="bg-contain w-full rounded-xl h-full"
+          src="/teamontwikkeling.jpg"
+          alt=""
+        />
+      </div>
     </div>
 
     <div class="flex justify-center items-center mt-[10rem]">
@@ -412,132 +452,6 @@
           sterke punten en ontwikkelpunten van het team. Dit rapport wordt
           overhandigd aan de teammanager en vormt een solide basis voor het
           opstellen van een effectief teamplan.
-        </div>
-      </div>
-      <div class=" bg-[#879EC8] w-full h-[100rem]">
-        <div class="flex justify-center items-center">
-          <h2
-            class="max-sm:w-[25rem] h-[5rem] w-[70rem] max-md:w-[35rem] bg-orange-400 mt-[3rem] rounded-3xl flex justify-center items-center text-4xl font-bold text-white drop-shadow-xl max-lg:w-[55rem]"
-          >
-            Contact
-          </h2>
-        </div>
-        <div class="flex items-center justify-center mt-[7rem]">
-          <div
-            class="relative bg-white rounded-xl w-[50rem] h-[43rem] max-lg:w-[40rem] max-sm:w-[25rem] max-sm:h-[29rem]"
-          >
-            <div
-              class="w-[30rem] h-[40rem] float-right mr-[4rem] mt-[5rem] max-sm:w-[17rem] max-sm:mt-[2rem]"
-            >
-              <form on:submit={handleSubmit} class="space-y-6">
-                <div class="relative">
-                  <input
-                    type="text"
-                    id="name"
-                    bind:value={formData.name}
-                    placeholder=" "
-                    required
-                    class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent"
-                  />
-                  <label
-                    for="name"
-                    class="absolute left-4
-                          transition-all duration-200 text-gray-400 text-md
-                          peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
-                          {formData.name
-                      ? 'top-2 text-sm text-blue-500'
-                      : 'top-[21px] text-gray-400 text-base'}"
-                  >
-                    Naam
-                  </label>
-                </div>
-
-                <div class="relative">
-                  <input
-                    type="email"
-                    id="email"
-                    bind:value={formData.email}
-                    placeholder=" "
-                    required
-                    class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent"
-                  />
-                  <label
-                    for="email"
-                    class="absolute left-4
-                          transition-all duration-200 text-gray-400 text-md
-                          peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
-                          {formData.email
-                      ? 'top-2 text-sm text-blue-500'
-                      : 'top-[21px] text-gray-400 text-base'}"
-                  >
-                    E-mailadres
-                  </label>
-                </div>
-
-                <div class="relative">
-                  <textarea
-                    id="message"
-                    bind:value={formData.message}
-                    rows="5"
-                    placeholder=" "
-                    required
-                    class="peer mt-1 block w-full p-4 pt-6 border border-gray-300 rounded-xl focus:ring-[#185CE6] focus:border-[#185CE6] placeholder-transparent resize-none"
-                  ></textarea>
-                  <label
-                    for="message"
-                    class="absolute left-4
-                          transition-all duration-200 text-gray-400 text-md
-                          peer-focus:top-2 peer-focus:text-sm peer-focus:text-blue-500
-                          {formData.message
-                      ? 'top-2 text-sm text-blue-500'
-                      : 'top-[21px] text-gray-400 text-base'}"
-                  >
-                    Bericht
-                  </label>
-                </div>
-
-                <div class="text-center">
-                  <button
-                    type="submit"
-                    class="w-full bg-orange-400 hover:bg-orange-500 text-white py-3 px-6 rounded-lg font-semibold transition-all"
-                    >Verstuur</button
-                  >
-                </div>
-              </form>
-            </div>
-          </div>
-          <div
-            class="absolute w-[23rem] h-[37rem] rounded-xl bg-orange-400 mr-[47rem] max-lg:mr-[0rem] max-lg:mt-[70rem]"
-          >
-            <div class="flex justify-center items-center">
-              <div
-                class="flex-col justify-center items-center h-[37rem] mt-[6rem]"
-              >
-                <div class="w-[20rem] h-[10rem]">
-                  <div class="flex justify-between items-center">
-                    <i class="fa-solid fa-location-dot text-white text-6xl"></i>
-                    <h2 class="text-white text-xl font-bold">
-                      Naam: A.Nijlant<br /> Bedrijfsnaam:focus6 <br /> Website: focus6.nl
-                    </h2>
-                  </div>
-                </div>
-                <div class="w-[20rem] h-[10rem]">
-                  <div class="flex justify-between items-center">
-                    <i class="fa-solid fa-envelope text-white text-6xl"></i>
-                    <h2 class="text-white text-xl font-bold">
-                      Email: a.nijlant@focus6.nl
-                    </h2>
-                  </div>
-                </div>
-                <div class="w-[20rem] h-[10rem]">
-                  <div class="flex justify-between items-center">
-                    <i class="fa-solid fa-phone text-white text-6xl"></i>
-                    <h2 class="text-white text-xl font-bold">06-21937222</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

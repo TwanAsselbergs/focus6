@@ -1,16 +1,10 @@
 <script>
   import { onMount } from "svelte";
+  import emailjs from "emailjs-com";
   import Header from "../../components/Header.svelte";
   import Footer from "../../components/Footer.svelte";
 
   let post = {};
-
-  onMount(async () => {
-    const res = await fetch(
-      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/21",
-    );
-    post = await res.json();
-  });
 
   let formData = {
     name: "",
@@ -18,9 +12,27 @@
     message: "",
   };
 
-  const handleSubmit = (e) => {
+  const USER_ID = "cxFG-mKexUdTXtOZ4";
+  const SERVICE_ID = "service_8j8xqta";
+  const TEMPLATE_ID = "template_0bxy6d4";
+
+  onMount(async () => {
+    const res = await fetch(
+      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/21",
+    );
+    post = await res.json();
+  });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Verstuurd");
+    try {
+      await emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID);
+      alert("Bericht succesvol verzonden.");
+      formData = { name: "", email: "", message: "" };
+    } catch (error) {
+      alert("Er is iets misgegaan. Probeer het opnieuw.");
+      console.error(error);
+    }
   };
 </script>
 

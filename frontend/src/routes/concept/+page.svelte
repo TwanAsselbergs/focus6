@@ -7,7 +7,7 @@
 
   onMount(async () => {
     const res = await fetch(
-      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/32",
+      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/32",
     );
     post = await res.json();
   });
@@ -29,7 +29,7 @@
     <h2 class="text-2xl md:text-3xl font-bold text-gray-800">
       Het Spiegelconcept
     </h2>
-    <p class="w-4/6 pt-8 text-lg text-gray-700">
+    <p class="w-10/12 md:w-4/6 pt-8 text-lg text-gray-700">
       {post.spiegelconcept_1}
       <br /> <br />
       {post.spiegelconcept_2}
@@ -39,7 +39,7 @@
   </div>
 
   <section>
-    <div class="flex flex-col md:flex-row justify-center items-center mt-24">
+    <div class="flex flex-col md:flex-row justify-center items-center md:mt-24">
       <!-- Left Content -->
       <div class="md:w-1/2 flex justify-center items-center flex-col md:block">
         <h2
@@ -62,10 +62,12 @@
       />
     </div>
     <div
-      class="flex flex-col-reverse md:flex-row items-center md:justify-center my-24 md:my-48"
+      class="flex flex-col-reverse md:flex-row items-center md:justify-center my-12 md:my-48"
     >
       <!-- Image Container with Animation -->
-      <div class="w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12">
+      <div
+        class="w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12 mb-10 md:mb-0"
+      >
         <img
           src={post.img_samen_sturen}
           alt="Samen Sturen"
@@ -89,9 +91,11 @@
 
   <!-- Subheader -->
   <div
-    class="w-11/12 md:w-[78%] mx-auto bg-gray-100 flex justify-center items-center rounded-3xl mb-24"
+    class="w-10/12 md:w-[78%] mx-auto bg-gray-100 flex justify-center items-center rounded-3xl mb-12 md:mb-24"
   >
-    <h2 class="text-gray-800 text-4xl md:text-5xl font-bold py-24">Aanpak</h2>
+    <h2 class="text-gray-800 text-4xl md:text-5xl font-bold py-16 md:py-24">
+      Aanpak
+    </h2>
   </div>
 
   <section>
@@ -121,7 +125,7 @@
     </div>
 
     <div
-      class="flex flex-col-reverse md:flex-row items-center md:justify-center my-24 md:my-48"
+      class="flex flex-col-reverse md:flex-row items-center md:justify-center my-12 md:my-48"
     >
       <div class="w-4/5 md:w-1/3 h-48 md:h-72 rounded-3xl md:mr-12">
         <img
@@ -152,9 +156,9 @@
   <section class="mb-16">
     <!-- Subheader -->
     <div
-      class="w-11/12 md:w-[78%] mx-auto bg-gray-100 flex justify-center items-center rounded-3xl my-24"
+      class="w-10/12 md:w-[78%] mx-auto bg-gray-100 flex justify-center items-center rounded-3xl mt-20 mb-12 md:my-24"
     >
-      <h2 class="text-gray-800 text-4xl md:text-5xl font-bold py-24">
+      <h2 class="text-gray-800 text-4xl md:text-5xl font-bold py-16 md:py-24">
         Implementatie
       </h2>
     </div>
@@ -182,7 +186,7 @@
     </div>
 
     <div
-      class="flex flex-col-reverse md:flex-row justify-center items-center my-32"
+      class="flex flex-col-reverse md:flex-row justify-center items-center my-4 md:my-32"
     >
       <img
         src={post.img_teamplan_cyclus}
@@ -198,7 +202,7 @@
           Teamplan Cyclus
         </h2>
         <p
-          class="w-10/12 md:w-9/12 flex justify center items-center text-center mx-auto md:mx-auto flex-col text-lg transition-all duration-500 ease-in-out"
+          class="w-10/12 md:w-7/12 flex justify center items-center text-center mx-auto flex-col text-lg transition-all duration-500 ease-in-out"
         >
           {post.teamplan_cyclus}
         </p>

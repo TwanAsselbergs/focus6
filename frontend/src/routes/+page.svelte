@@ -9,30 +9,30 @@
 
   onMount(async () => {
     const postRes = await fetch(
-      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/29",
+      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/29",
     );
     post = await postRes.json();
 
     const reviewsRes = await fetch(
-      "http://localhost/focus6/wordpress/wp-json/wp/v2/site-review",
+      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/site-review",
     );
     reviews = await reviewsRes.json();
 
     setInterval(() => {
       currentReviewIndex = (currentReviewIndex + 1) % reviews.length;
-    }, 5000);
+    }, 10000);
   });
 </script>
 
 <Header />
 
-<main class="pt-24">
+<main class="mt-24">
   <section class="mb-8 md:mb-16 relative">
     <div class="relative w-full mx-auto">
       <img
         src={post.img_header}
         alt="Header"
-        class="w-full h-[40rem] md:h-auto object-cover rounded-b-3xl md:rounded-r-full"
+        class="w-full h-[40rem] md:h-screen object-cover rounded-b-3xl md:rounded-r-full"
       />
       <div
         class="absolute inset-0 rounded-3xl text-white pl-4 pt-16 md:pt-48 md:pl-48"
@@ -41,19 +41,24 @@
           class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
         >
           <h2
-            class="text-4xl md:text-7xl font-semibold pb-4 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)] text-center md:text-left"
+            class="text-4xl md:text-7xl font-semibold pb-6 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)] text-center md:text-left"
           >
             Welkom bij Focu<span class="text-[#F00F22]">s</span><span
               class="text-[#185CE6]">6</span
             >!
           </h2>
+          <img
+            src={post.img_help}
+            alt="Help"
+            class="hidden xl:block absolute w-24 h-auto left-[47.40rem] top-[8.64rem] scale-x-[-1]"
+          />
           <p
-            class="w-11/12 md:w-3/4 text-center md:text-left text-lg pt-4 pb-12 [text-shadow:_0_2px_4px_rgb(0_0_0_/_0.2)]"
+            class="w-11/12 md:w-3/4 text-center md:text-left text-lg pt-4 pb-10 pl-2 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)]"
           >
             {post.header_paragraph}
           </p>
           <a
-            href="/concept"
+            href="/focus6/concept.html"
             class="bg-[#185CE6] hover:bg-[#2B67E8] transition-all duration-500 py-4 px-6 md:py-4 rounded-lg font-semibold text-lg md:text-lg"
             >Spiegelconcept</a
           >
@@ -91,14 +96,14 @@
       <img
         src={post.img_paragraph_1}
         alt="Img"
-        class="rounded-3xl shadow-xl w-4/5 md:w-1/4 mt-4 md:mt-0"
+        class="rounded-3xl shadow-xl w-4/5 h-52 md:h-72 object-cover md:w-1/4 mt-4 md:mt-0"
       />
     </div>
     <div
       class="flex flex-col md:flex-row items-center md:justify-center my-12 md:my-48"
     >
       <a
-        href="/concept"
+        href="/focus6/concept.html"
         class="relative bg-[#185CE6] w-4/5 md:w-1/3 h-52 md:h-72 scale-[101%] md:scale-100 rounded-3xl md:mr-12 shadow-xl hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-[101%]"
       >
         <h2 class="p-6 md:pt-8 text-white font-semibold text-2xl">
@@ -131,8 +136,9 @@
         <p class="w-10/12 md:w-full mx-auto text-lg text-gray-700">
           {post.paragraph_2}
           <span
-            ><a href="/concept" class="hover:underline text-blue-500"
-              >Lees meer...</a
+            ><a
+              href="/focus6/concept.html"
+              class="hover:underline text-blue-500">Lees meer...</a
             ></span
           >
         </p>
@@ -158,7 +164,7 @@
               >
                 <div class="relative flex flex-row">
                   <img
-                    src="/quotes.png"
+                    src={post.img_quotes}
                     alt="Quotes"
                     class="absolute w-6 md:w-auto h-8 md:h-8 object-contain pb-2"
                   />
@@ -187,7 +193,7 @@
               >
                 <div class="relative flex flex-row">
                   <img
-                    src="/quotes.png"
+                    src={post.img_quotes}
                     alt="Quotes"
                     class="absolute w-6 md:w-auto h-8 md:h-8 object-contain pb-2"
                   />
@@ -212,7 +218,7 @@
               >
                 <div class="relative flex flex-row">
                   <img
-                    src="/quotes.png"
+                    src={post.img_quotes}
                     alt="Quotes"
                     class="absolute w-6 md:w-auto h-8 md:h-8 object-contain pb-2"
                   />

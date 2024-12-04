@@ -11,7 +11,7 @@
 
   onMount(async () => {
     const res = await fetch(
-      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/1",
+      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/1",
     );
     post = await res.json();
   });
@@ -34,7 +34,7 @@
           {post.paragraph}
         </p>
         <a
-          href="/services"
+          href="/focus6/services.html"
           class="text-blue-500 font-semibold hover:underline mt-4 block"
         >
           Meer lezen over ons →
@@ -96,25 +96,26 @@
         <h3 class="text-white text-lg md:text-xl font-bold mb-4">Navigatie</h3>
         <nav class="flex flex-col space-y-4 text-gray-400 font-semibold">
           <a
-            href="/"
-            class={$currentPath === "/" ? "underline " : "hover:underline"}
-            >Home</a
+            href="/focus6/"
+            class={$currentPath === "/focus6/"
+              ? "underline "
+              : "hover:underline"}>Home</a
           >
           <a
-            href="/concept"
-            class={$currentPath === "/concept"
+            href="/focus6/concept.html"
+            class={$currentPath === "/focus6/concept.html"
               ? "underline"
               : "hover:underline"}>Spiegelconcept</a
           >
           <a
-            href="/services"
-            class={$currentPath === "/services"
+            href="/focus6/services.html"
+            class={$currentPath === "/focus6/services.html"
               ? "underline"
               : "hover:underline"}>Dienstverlening</a
           >
           <a
-            href="/contact"
-            class={$currentPath === "/contact"
+            href="/focus6/contact.html"
+            class={$currentPath === "/focus6/contact.html"
               ? "underline"
               : "hover:underline"}>Contact</a
           >
@@ -125,7 +126,7 @@
   <div
     class="flex justify-center items-center mx-auto bg-[#1C2122] p-10 md:gap-36"
   >
-    <a href="/">
+    <a href="/focus6/">
       <img src={post.logo} alt="Logo" class="w-24 h-auto hidden md:block" />
     </a>
     <p class="text-gray-600 text-xs">

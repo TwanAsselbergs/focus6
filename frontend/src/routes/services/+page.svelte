@@ -7,7 +7,7 @@
 
   onMount(async () => {
     const res = await fetch(
-      "http://localhost/focus6/wordpress/wp-json/wp/v2/posts/41",
+      "https://u230654.gluwebsite.nl/focus6/wordpress/wp-json/wp/v2/posts/41",
     );
     post = await res.json();
   });
