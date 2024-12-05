@@ -106,6 +106,15 @@
               >Contact</a
             >
           </li>
+          <li>
+            <a href="/focus6/spiegelspel.html"
+              ><img
+                src={post.logo_spiegelspel}
+                alt="Spiegelspel"
+                class="w-auto h-8"
+              /></a
+            >
+          </li>
         </ul>
       </div>
 
@@ -197,6 +206,15 @@
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
           >Contact</a
+        >
+      </li>
+      <li class="py-3">
+        <a href="/focus6/spiegelspel.html"
+          ><img
+            src={post.logo_spiegelspel}
+            alt="Spiegelspel"
+            class="w-auto h-8"
+          /></a
         >
       </li>
     </ul>
