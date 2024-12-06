@@ -156,7 +156,7 @@
   ></div>
 
   <div
-    class="fixed top-0 right-0 h-full w-64 bg-white z-40 transform transition-transform duration-500 ease-in-out"
+    class="fixed top-0 right-0 h-full w-64 rounded-l-3xl bg-white z-40 transform transition-transform duration-500 ease-in-out"
     class:translate-x-0={$openMenu}
     class:translate-x-full={!$openMenu}
   >
