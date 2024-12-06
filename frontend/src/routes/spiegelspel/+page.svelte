@@ -86,17 +86,8 @@
               class="{$currentPath === '/focus6/concept'
                 ? 'bg-gray-100 hover:bg-gray-200'
                 : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
-              >Het Doel
+              >Doel Spiegelspel
             </a>
-          </li>
-          <li class="pr-1">
-            <a
-              href="/focus6/services"
-              class="{$currentPath === '/focus6/services'
-                ? 'bg-gray-100 hover:bg-gray-200'
-                : 'hover:bg-gray-100'} rounded-md py-2 px-4 transition-all duration-500"
-              >Onze Waardes</a
-            >
           </li>
           <li class="pr-1">
             <a
@@ -188,16 +179,7 @@
           class="{$currentPath === '/focus6/concept'
             ? 'bg-gray-100 hover:bg-gray-200'
             : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
-          >Ons Doel</a
-        >
-      </li>
-      <li class="py-3">
-        <a
-          href="/focus6/services"
-          class="{$currentPath === '/focus6/services'
-            ? 'bg-gray-100 hover:bg-gray-200'
-            : 'hover:bg-gray-100'} rounded-md px-4 py-2 transition-all duration-500"
-          >Onze Waardes</a
+          >Doel Spiegelspel</a
         >
       </li>
       <li class="py-3">
@@ -218,7 +200,7 @@
   </div>
 </header>
 
-<main class="mt-24">
+<main class="mt-24 bg-blue-50">
   <section class="relative">
     <div class="relative w-full mx-auto bg-blue-50">
       <img
@@ -244,14 +226,19 @@
           >
             {post.header_paragraph}
           </p>
+          <a
+            href="/focus6/concept.html"
+            class="bg-[#DE2355] hover:bg-[#c7345b] transition-all duration-500 py-4 px-6 md:py-4 rounded-lg font-semibold text-lg md:text-lg"
+            >Het Spiegelspel</a
+          >
         </div>
       </div>
     </div>
   </section>
-  <div class="bg-blue-50 w-full h-[70rem] md:h-[80rem]">
+  <div class="bg-blue-50 w-full py-20">
     <div class="flex items-center justify-center">
       <h2
-        class="h-[5rem] max-[475px]:w-[20rem] max-[475px]:text-2xl w-[60rem] max-sm:w-[30rem] bg-blue-400 rounded-3xl mt-12 md:mt-[10rem] flex justify-center items-center text-4xl font-bold text-white drop-shadow-xl max-md:w-[40rem]"
+        class="h-[5rem] max-[475px]:w-[20rem] max-[475px]:text-2xl w-[60rem] max-sm:w-[30rem] bg-blue-400 rounded-3xl flex justify-center items-center text-4xl font-bold text-white drop-shadow-xl max-md:w-[40rem]"
       >
         Doel van het Spiegelspel
       </h2>
@@ -265,7 +252,7 @@
         alt=""
       />
       <div
-        class="max-[475px]:w-[20rem] max-[475px]:text-2xl max-[475px]:h-[7rem] w-[25rem] h-[15rem] bg-blue-400 rounded-3xl drop-shadow-lg text-white pl-4 pt-2 text-[2.26rem] font-bold"
+        class="max-[475px]:w-[20rem] max-[475px]:text-2xl max-[475px]:h-[7rem] w-[25rem] h-[15rem] bg-blue-400 rounded-3xl drop-shadow-lg text-white pt-2 md:pt-[5.2rem] md:text-2xl font-bold text-center"
       >
         {post.hero_paragraph}
       </div>
@@ -273,9 +260,9 @@
 
     <div class="flex justify-center items-center">
       <h2
-        class="max-[475px]:w-[20rem] max-[475px]: max-sm:w-[25rem] h-[5rem] w-[70rem] bg-blue-400 mt-[3rem] rounded-3xl flex justify-center items-center text-4xl font-bold text-white drop-shadow-xl max-lg:w-[60rem] max-md:w-[40rem]"
+        class="max-[475px]:w-[20rem] max-[475px]: max-sm:w-[25rem] h-[5rem] w-[70rem] bg-blue-400 mt-[3rem] rounded-3xl flex justify-center items-center text-lg md:text-4xl font-bold text-white drop-shadow-xl max-lg:w-[60rem] max-md:w-[40rem]"
       >
-        Meerwaarde
+        Ervaar het Spiegelspel ↓
       </h2>
     </div>
     <div
@@ -286,7 +273,7 @@
     </div>
     <div class="flex justify-center items-center">
       <div
-        class="w-[73rem] h-72 md:h-[20rem] max-[475px]:w-[22rem] bg-gray-200 rounded-xl max-lg:w-[61rem] max-md:w-[40rem] max-sm:w-[26rem]"
+        class="w-6/12 h-72 md:h-[20rem] max-[475px]:w-[22rem] bg-gray-200 rounded-xl max-lg:w-[61rem] max-md:w-[40rem] max-sm:w-[26rem]"
       >
         <video
           src={post.vid_promo}
@@ -299,7 +286,7 @@
     </div>
   </div>
 
-  <div class="w-full h-[30rem] bg-[#879EC8]">
+  <div class="hidden md:block w-full bg-[#879EC8] pb-12">
     <div
       class="flex justify-center items-center gap-[10rem] max-xl:gap-[5rem] max-md:hidden"
     >
@@ -333,9 +320,7 @@
     <div
       class="flex justify-center items-center gap-[11rem] max-xl:gap-[6rem] max-lg:gap-[2rem] max-md:hidden"
     >
-      <div
-        class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
-      >
+      <div class="w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]">
         <img
           class="bg-contain w-full rounded-xl h-full"
           src={post.img_kwaliteit}
@@ -343,9 +328,7 @@
         />
       </div>
 
-      <div
-        class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
-      >
+      <div class="w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]">
         <img
           class="bg-contain w-full rounded-xl h-full"
           src={post.img_samenwerken}
@@ -353,9 +336,7 @@
         />
       </div>
 
-      <div
-        class="mb-[5rem] w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]"
-      >
+      <div class="w-[21rem] h-[14rem] bg-white rounded-xl max-lg:w-[18rem]">
         <img
           class="bg-contain w-full rounded-xl h-full"
           src={post.img_teamontwikkeling}
@@ -441,43 +422,35 @@
       </h2>
     </div>
     <div
-      class="flex justify-center items-center mt-[6rem] gap-[6rem] max-md:flex-col-reverse"
+      class="flex justify-center items-center mt-12 md:mt-[6rem] gap-12 md:gap-[6rem] max-md:flex-col-reverse"
     >
-      <img
-        class="w-[30rem] h-auto max-sm:w-[25rem]"
-        src={post.img_denken}
-        alt="Denken"
-      />
+      <img class="w-auto h-72 md:h-96" src={post.img_denken} alt="Denken" />
       <div
-        class="max-[475px]:w-[20rem] max-[475px]:text-xl max-[475px]:h-[43rem] w-[25rem] h-[46rem] rounded-xl bg-blue-400 p-3 text-white font-medium text-2xl drop-shadow-xl"
+        class="w-11/12 md:w-5/12 rounded-xl bg-blue-400 p-8 text-white text-xl drop-shadow-xl"
       >
         {post.spiegelspel_paragraph_1}
       </div>
     </div>
     <div
-      class="flex justify-center items-center mt-[6rem] gap-[10rem] max-md:flex-col"
+      class="flex justify-center items-center mt-12 md:mt-[6rem] md:gap-[6rem] max-md:flex-col-reverse"
     >
       <div
-        class="max-[475px]:w-[20rem] max-[475px]:text-xl max-[475px]:h-[22rem] w-[25rem] h-[25rem] rounded-xl bg-blue-400 p-3 text-white font-medium text-2xl drop-shadow-xl"
+        class="w-11/12 md:w-4/12 rounded-xl bg-blue-400 p-8 text-white text-xl drop-shadow-xl"
       >
         {post.spiegelspel_paragraph_2}
       </div>
       <img
-        class="w-[25rem] h-auto max-sm:w-[20rem]"
+        class="w-auto h-48 md:h-60 mb-12"
         src={post.img_bespreken}
         alt="Bespreken"
       />
     </div>
     <div
-      class="flex justify-center items-center mt-[6rem] gap-[8rem] max-md:flex-col-reverse"
+      class="flex justify-center items-center mt-12 md:mt-[6rem] md:gap-[6rem] max-md:flex-col-reverse pb-20"
     >
-      <img
-        class="w-[25rem] h-auto max-md:mb-[6rem]"
-        src={post.img_selectie}
-        alt="Selectie"
-      />
+      <img class="w-auto h-40" src={post.img_selectie} alt="Selectie" />
       <div
-        class="max-[475px]:w-[20rem] max-[475px]:text-xl max-[475px]:h-[24rem] w-[25rem] h-[26rem] rounded-xl bg-blue-400 p-3 text-white font-medium text-2xl drop-shadow-xl mb-[3rem]"
+        class="w-11/12 md:w-5/12 rounded-xl bg-blue-400 p-8 text-white text-xl drop-shadow-xl mt-12"
       >
         {post.spiegelspel_paragraph_3}
       </div>
