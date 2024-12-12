@@ -4,7 +4,9 @@
    XAMPP
    Svelte
    TailwindCSS
-4. in GIT Bash:
+   NodeJS
+   Vite
+5. in GIT Bash:
    npm install
    
 6. Ga naar de juiste directory (mijn directory als voorbeeld: /c/xampp/htdocs/focus6/focus6/frontend) Mijn directory heeft dubbel focus6, oeps.
