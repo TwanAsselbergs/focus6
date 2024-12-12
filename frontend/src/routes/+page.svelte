@@ -67,11 +67,6 @@
               class="text-[#185CE6]">6</span
             >!
           </h2>
-          <img
-            src={post.img_help}
-            alt="Help"
-            class="hidden xl:block absolute w-24 h-auto left-[47.40rem] top-[8.64rem] scale-x-[-1]"
-          />
           <p
             class="w-11/12 md:w-3/4 text-center md:text-left text-lg pt-4 pb-10 md:pl-1.5 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)]"
           >
