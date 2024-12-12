@@ -61,7 +61,7 @@
           class="w-full md:w-2/3 flex justify-center items-center md:items-start flex-col md:flex-none"
         >
           <h2
-            class="text-4xl md:text-7xl font-semibold pb-6 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)] text-center md:text-left"
+            class="text-4xl md:text-7xl lg:text-6xl font-semibold pb-6 [text-shadow:_0_4px_4px_rgb(0_0_0_/_0.2)] text-center md:text-left"
           >
             Welkom bij Focu<span class="text-[#F00F22]">s</span><span
               class="text-[#185CE6]">6</span
